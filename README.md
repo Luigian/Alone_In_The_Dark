@@ -1,1 +1,2 @@
-# C-Exam-Alone-In-The-Dark
+![](resources/images/calone.png)
+# C-Exam-Alone-In-The-DarK
