@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   expand_str.c                                       :+:      :+:    :+:   */
+/*   hidenp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/10 15:03:57 by lusanche          #+#    #+#             */
-/*   Updated: 2019/06/10 15:44:36 by lusanche         ###   ########.fr       */
+/*   Created: 2019/06/17 14:23:22 by lusanche          #+#    #+#             */
+/*   Updated: 2019/06/17 16:57:29 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	expand(char *s)
+char	hidenp(char *s1, char *s2)
 {
-	int		sp;
-	
-	sp = 0;
-	while (*s)
+	while (*s2 && *s1)
 	{
-		while (*s == ' ' || *s == '\t')
-			++s;
-		if (*s && sp)
-			write(1, "   ", 3);
-		while (*s && *s != ' ' && *s != '\t')
+		if (*s1 == *s2)
 		{
-			write(1, &(*s), 1);
-			sp = 1;
-			++s;
+			++s1;
+			++s2;
 		}
+		else
+			++s2;
 	}
+	if (*s1 == '\0')
+		return ('1');
+	else
+		return ('0');
 }
 
 int		main(int ac, char **av)
 {
-	if (ac == 2)
-		expand(av[1]);
-	write (1, "\n", 1);
+	char		c;
+
+	if (ac == 3)
+	{
+		c = hidenp(av[1], av[2]);
+		write(1, &c, 1);
+	}
+	write(1, "\n", 1);
 	return (0);
 }

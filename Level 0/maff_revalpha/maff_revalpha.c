@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_bits.c                                       :+:      :+:    :+:   */
+/*   maff_revalpha.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/17 14:10:05 by lusanche          #+#    #+#             */
-/*   Updated: 2019/06/17 14:20:12 by lusanche         ###   ########.fr       */
+/*   Created: 2019/06/04 09:02:46 by exam              #+#    #+#             */
+/*   Updated: 2019/06/04 09:06:05 by exam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	print_bits(unsigned char octet)
-{
-	unsigned char	bit;
-	int				i;
-
-	i = 8;
-	while (i--)	
-	{
-		bit = (octet >> i & 1) + 48;
-		write(1, &bit, 1);
-	}
-}
-
 int		main(void)
 {
-	print_bits(42);
-	write(1, "\n", 1);
+	write(1, "zYxWvUtSrQpOnMlKjIhGfEdCbA\n", 27);
 	return (0);
 }

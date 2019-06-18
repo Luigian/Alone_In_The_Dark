@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/09 13:28:15 by lusanche          #+#    #+#             */
-/*   Updated: 2019/05/09 13:40:46 by lusanche         ###   ########.fr       */
+/*   Created: 2019/06/10 12:24:31 by lusanche          #+#    #+#             */
+/*   Updated: 2019/06/10 12:33:36 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_swap(int *a, int *b)
 {
-	int temp;
+	int		temp;
 
 	temp = *a;
 	*a = *b;
@@ -23,18 +23,17 @@ void	ft_swap(int *a, int *b)
 
 int		main(void)
 {
-	int i;
-	int j;
-	int *p1;
-	int *p2;
-	
-	
+	int		i;
+	int		j;
+	int		*pi;
+	int		*pj;
+
 	i = 123;
 	j = 456;
-	p1 = &i;
-	p2 = &j;
-	printf("%d\t%d\n", *p1, *p2);
-	ft_swap(p1, p2);
-	printf("%d\t%d\n", *p1, *p2);
+	pi = &i;
+	pj = &j;
+	printf("%d\t%d\n", *pi, *pj);
+	ft_swap(pi, pj);
+	printf("%d\t%d\n", *pi, *pj);
 	return (0);
 }
