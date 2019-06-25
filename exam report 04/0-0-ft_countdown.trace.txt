@@ -1,0 +1,47 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z2r9p3.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue May 28 09:08:03 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190528/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/mt/g2zgm2t90lg14r1n5g32lbvr0000gp/T/tmpns8TYf/user log --pretty='%H - %an, %ad : %s'
+d3a278125a3870b529fe53a859cefb1ee024a223 - Exam 42, Tue May 28 09:07:48 2019 -0700 : creation of ft_countdown
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/mt/g2zgm2t90lg14r1n5g32lbvr0000gp/T/tmpns8TYf/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  244 May 28 09:08 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 May 28 09:08 ft_countdown
+
+/var/folders/mt/g2zgm2t90lg14r1n5g32lbvr0000gp/T/tmpns8TYf/user/ft_countdown:
+total 8
+-rw-r--r--  1 deepthought  deepthought  977 May 28 09:08 ft_countdown.c
+ 
+= ft_countdown =================================================================
+$> gcc -Wextra -Wall -Werror ft_countdown.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./sxinsmlfweerift5pygjp0hu
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

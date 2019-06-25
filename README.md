@@ -1,1 +1,0 @@
-![](resources/images/calone.png)
