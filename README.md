@@ -2,7 +2,7 @@
 
 # C Exam Alone In The Dark
 
-This is a collection of the exercises that I have faced so far in the "C Exam Alone In The Dark - Beginner". These exams allow me to check my achievements when i am alone in front of the computer, without peers and without internet. To validate this 42 project (which is a prerequisite for my departure in the 1st stage), i must validate 5 exams with a minimum score of 75, that means, be able to succed on exercises of level 4.
+This is a collection of the exercises that I have faced so far in the "C Exam Alone In The Dark - Beginner". These exams allow me to check my achievements when i am alone in front of the computer, without peers and without internet. To validate this 42 project (which is a prerequisite for my departure in the 1st stage), i must validate 5 exams with a minimum score of 75, which  means be able to succed on exercises of level 4.
 
 ### Key points:
 
@@ -13,17 +13,25 @@ This is a collection of the exercises that I have faced so far in the "C Exam Al
 * Strings and memory manipulation.
 * Linked lists manage.
 
+### Objectives:
+
+* Basics of C.
+* Basics in algorithmics.
+
+### Skills:
+
+* Imperative programming.
+* Rigor.
+* Algorithms & AI.
+
 ### Compilation:
 
-`gcc -Wall -Wextra -Werror "file_" libft.a && ./a.out` | Compile a main with the library, and then run the program.
+(All exercises in this collection include a main, even those that are not required by the subject for the purpose of the exam).
 
-`make all` | First time compilation.
-
-`make fclean` | Delete files generated from compilation.
-
-`make re` | Delete files generated from compilation and recompile.
-
+`gcc -Wall -Wextra -Werror "file_exercise"` | For exercises that do not use a header.
+`gcc -Wall -Wextra -Werror "file_exercise" -I "file_header"` | For exercises that include a header.
 
 ### Execution:
 
-`gcc "file_main" libft.a && ./a.out` | Compile a main with the library, and then run the program.
+`./a.out` | For exercises with arguments supplied from inside the program.
+`./a.out "string_1" "string_2" "string_3"` | For exercises that expects command line arguments.
