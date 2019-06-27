@@ -6,12 +6,11 @@ This is a collection of the exercises that I have faced so far in the "C Exam Al
 
 ### Key points:
 
-* Basics of C
-* Basics in algorithmics
-* Integration of header, main and function files.
-* Compiling using a Makefile.
-* Strings and memory manipulation.
-* Linked lists manage.
+* Pointers and adress arithmetic.
+* Multi-dimensional arrays vs pointer to pointers (pointers array).
+* Command-line arguments.
+* Pointers to functions.
+* Structure manipulation.
 
 ### Objectives:
 
@@ -36,4 +35,4 @@ This is a collection of the exercises that I have faced so far in the "C Exam Al
 
 `./a.out` | For exercises with arguments supplied from inside the program.
 
-`./a.out "string_1" "string_2" "string_3"` | For exercises that expects command line arguments.
+`./a.out "string_1" "string_2" "string_3"` | For exercises that expects command-line arguments.
