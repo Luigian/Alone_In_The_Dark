@@ -29,9 +29,11 @@ This is a collection of the exercises that I have faced so far in the "C Exam Al
 (All exercises in this collection include a main, even those that are not required by the subject for the purpose of the exam).
 
 `gcc -Wall -Wextra -Werror "file_exercise"` | For exercises that do not use a header.
+
 `gcc -Wall -Wextra -Werror "file_exercise" -I "file_header"` | For exercises that include a header.
 
 ### Execution:
 
 `./a.out` | For exercises with arguments supplied from inside the program.
+
 `./a.out "string_1" "string_2" "string_3"` | For exercises that expects command line arguments.
