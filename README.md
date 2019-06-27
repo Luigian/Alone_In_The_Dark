@@ -1,1 +1,1 @@
-![](mages/calone_banner.png)
+![](images/calone_banner.png)
