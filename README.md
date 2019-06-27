@@ -7,30 +7,23 @@ This is a collection of the exercises that I have faced so far in the "C Exam Al
 ### Key points:
 
 * Basics of C
-
 * Basics in algorithmics
-
 * Integration of header, main and function files.
-
 * Compiling using a Makefile.
-
 * Strings and memory manipulation.
-
 * Linked lists manage.
-
 
 ### Compilation:
 
-`gcc -Wall -Wextra -Werror "file_" libft.a && ./a.out`| Compile a main with the library, and then run the program.
+`gcc -Wall -Wextra -Werror "file_" libft.a && ./a.out` | Compile a main with the library, and then run the program.
 
-`make all`| First time compilation.
+`make all` | First time compilation.
 
-`make fclean`
-| Delete files generated from compilation.
+`make fclean` | Delete files generated from compilation.
 
-`make re`| Delete files generated from compilation and recompile.
+`make re` | Delete files generated from compilation and recompile.
 
 
 ### Execution:
 
-`gcc "file_main" libft.a && ./a.out`| Compile a main with the library, and then run the program.
+`gcc "file_main" libft.a && ./a.out` | Compile a main with the library, and then run the program.
