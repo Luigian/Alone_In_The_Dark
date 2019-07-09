@@ -1,11 +1,11 @@
-![](images/calone_banner.png)
+![](resources/images/calone_banner.png)
 
 # C Exam Alone In The Dark
 
 This is a collection of the exercises that I have faced so far in the "C Exam Alone In The Dark - Beginner" of 42 School. These exams allowed me to check my achievements when i was alone in front of the computer, without peers and without internet. To validate this project (which is a prerequisite for my departure in the 1st stage), i must validate 5 exams with a minimum score of 75, which  means be able to succed on exercises of level 4.
 
 ### My exams record up to date:
-![](images/calone_record.png)
+![](resources/images/calone_record.png)
 
 ### Key points:
 
