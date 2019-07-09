@@ -1,0 +1,77 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z3r6p5.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Jul  2 12:21:48 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190702/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/p1/v19w_sh90l7c824t2n0vpml80000gp/T/tmpaBT_vV/user log --pretty='%H - %an, %ad : %s'
+869972d31b4bb7e7fc35d8d3bc83afcdfc8297e5 - Exam 42, Tue Jul 2 12:21:36 2019 -0700 : sort_int_tab
+f596c24ad2982b83be94bc44391484da2e91255d - Exam 42, Tue Jul 2 11:38:11 2019 -0700 : expand_str
+904475d4049b2670c72578fc3aac88300e1206ac - Exam 42, Tue Jul 2 11:13:08 2019 -0700 : ft_strrev
+2382d672e972944cf7c5b4d6499f185cb0ae1633 - Exam 42, Tue Jul 2 09:43:16 2019 -0700 : ft_strspn
+b87162a4249e750f7f8627983fc800ab52de194a - Exam 42, Tue Jul 2 09:17:35 2019 -0700 : ulstr
+251f51dbefc260c6413db9a9c250ef76ef2ee2da - Exam 42, Tue Jul 2 09:09:10 2019 -0700 : aff_z
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/p1/v19w_sh90l7c824t2n0vpml80000gp/T/tmpaBT_vV/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1430 Jul  2 12:21 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Jul  2 12:21 aff_z
+drwxr-xr-x  3 deepthought  deepthought   102 Jul  2 12:21 expand_str
+drwxr-xr-x  3 deepthought  deepthought   102 Jul  2 12:21 ft_strrev
+drwxr-xr-x  3 deepthought  deepthought   102 Jul  2 12:21 ft_strspn
+drwxr-xr-x  3 deepthought  deepthought   102 Jul  2 12:21 sort_int_tab
+drwxr-xr-x  3 deepthought  deepthought   102 Jul  2 12:21 ulstr
+
+/var/folders/p1/v19w_sh90l7c824t2n0vpml80000gp/T/tmpaBT_vV/user/aff_z:
+total 8
+-rw-r--r--  1 deepthought  deepthought  967 Jul  2 12:21 aff_z.c
+
+/var/folders/p1/v19w_sh90l7c824t2n0vpml80000gp/T/tmpaBT_vV/user/expand_str:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1321 Jul  2 12:21 expand_str.c
+
+/var/folders/p1/v19w_sh90l7c824t2n0vpml80000gp/T/tmpaBT_vV/user/ft_strrev:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1238 Jul  2 12:21 ft_strrev.c
+
+/var/folders/p1/v19w_sh90l7c824t2n0vpml80000gp/T/tmpaBT_vV/user/ft_strspn:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1126 Jul  2 12:21 ft_strspn.c
+
+/var/folders/p1/v19w_sh90l7c824t2n0vpml80000gp/T/tmpaBT_vV/user/sort_int_tab:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1272 Jul  2 12:21 sort_int_tab.c
+
+/var/folders/p1/v19w_sh90l7c824t2n0vpml80000gp/T/tmpaBT_vV/user/ulstr:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1196 Jul  2 12:21 ulstr.c
+ 
+= sort_int_tab =================================================================
+$> gcc -Wextra -Wall -Werror main.c sort_int_tab.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./15i3u02j577emxltx7hrflvq
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

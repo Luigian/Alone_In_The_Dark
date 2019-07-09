@@ -1,0 +1,154 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z2r9p12.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Jun  4 10:16:20 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190604/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/pg/tmwkznrj0fx2y3y98bk6035m0000gp/T/tmp8Dwr_G/user log --pretty='%H - %an, %ad : %s'
+a3fdbb0fca0583e37b40a38c1b898673ae55445f - Exam 42, Tue Jun 4 10:16:03 2019 -0700 : union
+ba4ec9eb914a3ea6af19d52fd3917392d5d418e7 - Exam 42, Tue Jun 4 09:17:52 2019 -0700 : ft_swap
+67a306807fd3aa0317c38a2d01400fa9c3e13cc2 - Exam 42, Tue Jun 4 09:08:12 2019 -0700 : maff_revalpha
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/pg/tmwkznrj0fx2y3y98bk6035m0000gp/T/tmp8Dwr_G/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  703 Jun  4 10:16 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Jun  4 10:16 ft_swap
+drwxr-xr-x  3 deepthought  deepthought  102 Jun  4 10:16 maff_revalpha
+drwxr-xr-x  3 deepthought  deepthought  102 Jun  4 10:16 union
+
+/var/folders/pg/tmwkznrj0fx2y3y98bk6035m0000gp/T/tmp8Dwr_G/user/ft_swap:
+total 8
+-rw-r--r--  1 deepthought  deepthought  972 Jun  4 10:16 ft_swap.c
+
+/var/folders/pg/tmwkznrj0fx2y3y98bk6035m0000gp/T/tmp8Dwr_G/user/maff_revalpha:
+total 8
+-rw-r--r--  1 deepthought  deepthought  993 Jun  4 10:16 maff_revalpha.c
+
+/var/folders/pg/tmwkznrj0fx2y3y98bk6035m0000gp/T/tmp8Dwr_G/user/union:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1576 Jun  4 10:16 union.c
+ 
+= union ========================================================================
+$> gcc -Wextra -Wall -Werror union.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./i2coh4spe2n97goxg0cak7eq 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./m2oaqyc9xldsn8o8xzhhssey "	 " " 		  "
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./6n8b9ysmop0kn90vvye04xac "rLnc0AzlOh"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./2809hqdr1inr69fs3015fvr0 "XCUF5cZJGDR" "qyHBlWzb28T53ZL7D"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./g3yvurip0pq07d206anm4j46 "oMjG9CRSYT3" "pvfT6noxbl1gF9h"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./cbktufjjkfd77bdtet4ra2fj "Jm9qoKaerHz" "yvkb0ToZJSx"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./9yx1qee9jf9zvcs641f1t9ik "Pa9UldH3q8AL" "bH0J7hqfEDx1i6"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./xmixjt9sgdqs588x9eepw1v6 "7QWbVxq4a3kr" "ZHWs"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./2uljwxnpwpuxexop5e4bir9z "hnt" "vP38OqGlcpZbK97A4"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./j1lvcdixxpz0xaweb5by9fcl "zqUnWHctSBTxMi34Y" "f7uh5qUcwGl0gVyT"
+$> diff -U 3 user_output_test10 test10.output | cat -e
+
+Diff OK :D
+= Test 11 ==================================================
+$> ./ylutkft9g57km54hrdj9x8xy "jJqisAbaXIYDmzF" "FPShn"
+$> diff -U 3 user_output_test11 test11.output | cat -e
+
+Diff OK :D
+= Test 12 ==================================================
+$> ./e32jnny96ggmqcveb8rttrsh "wfgx" "1sgHRT"
+$> diff -U 3 user_output_test12 test12.output | cat -e
+
+Diff OK :D
+= Test 13 ==================================================
+$> ./5i3lqfvebgmgbzq47ndfdarg "JasbHD5hCXfV" "Lry2gUP"
+$> diff -U 3 user_output_test13 test13.output | cat -e
+
+Diff OK :D
+= Test 14 ==================================================
+$> ./tape1icd5bwyg5zt1prg9kqh "DGdgkrzqTt" "SNbtzYfB"
+$> diff -U 3 user_output_test14 test14.output | cat -e
+
+Diff OK :D
+= Test 15 ==================================================
+$> ./n75k5hyhfg86a9rcf8jci9gx "47puMa5i3tcEbjl0" "jGRwO0ZmtABhTNg"
+$> diff -U 3 user_output_test15 test15.output | cat -e
+
+Diff OK :D
+= Test 16 ==================================================
+$> ./ydo13jksb9o5khczj38veemv "yJqmwuGSBQUl" "bGwkKexRFXS2B4"
+$> diff -U 3 user_output_test16 test16.output | cat -e
+
+Diff OK :D
+= Test 17 ==================================================
+$> ./5o9utt8ghpikeosrzuizqhj7 "lhIEq1A" "JQbWytH4Y32Gv1uR"
+$> diff -U 3 user_output_test17 test17.output | cat -e
+
+Diff OK :D
+= Test 18 ==================================================
+$> ./w7zof1fdazn2p307fle82b9g "LsOnKy8TWRUzSqpJv" "cdyL5BSb7"
+$> diff -U 3 user_output_test18 test18.output | cat -e
+
+Diff OK :D
+= Test 19 ==================================================
+$> ./f5f03761i3ax1gq6cdvav4mh "aCdcOw" "LDOtPQiJjC3U6AW"
+$> diff -U 3 user_output_test19 test19.output | cat -e
+
+Diff OK :D
+= Test 20 ==================================================
+$> ./svdpfk2elxrx3xglsdol8umf "Ol56" "9YSo2IRjMmU1"
+$> diff -U 3 user_output_test20 test20.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

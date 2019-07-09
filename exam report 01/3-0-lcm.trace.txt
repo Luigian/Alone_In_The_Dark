@@ -1,0 +1,68 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z3r2p15.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue May  7 11:27:31 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190507/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/nx/m9ycfh6d5vsd7jb_gh3ty3_r0000gp/T/tmpLo8aNP/user log --pretty='%H - %an, %ad : %s'
+d6c1149d92d7a1d6c43b975cb874134b2461e2fe - Exam 42, Tue May 7 11:26:40 2019 -0700 : creation of lcm
+12d90c8cb5726a92ea1ee40412cd2177bbfe1771 - Exam 42, Tue May 7 10:20:05 2019 -0700 : creation of ft_atoi
+c2c35eb24cf8c7f74a5872fd9f2b320ad8f5e126 - Exam 42, Tue May 7 09:45:41 2019 -0700 : creation of ft_swap
+1b42f2b04df4a4ea66225e8c707d9be263f4b304 - Exam 42, Tue May 7 09:20:31 2019 -0700 : creation of only_z
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/nx/m9ycfh6d5vsd7jb_gh3ty3_r0000gp/T/tmpLo8aNP/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  930 May  7 11:27 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 May  7 11:27 ft_atoi
+drwxr-xr-x  3 deepthought  deepthought  102 May  7 11:27 ft_swap
+drwxr-xr-x  3 deepthought  deepthought  102 May  7 11:27 lcm
+drwxr-xr-x  3 deepthought  deepthought  102 May  7 11:27 only_z
+
+/var/folders/nx/m9ycfh6d5vsd7jb_gh3ty3_r0000gp/T/tmpLo8aNP/user/ft_atoi:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1327 May  7 11:27 ft_atoi.c
+
+/var/folders/nx/m9ycfh6d5vsd7jb_gh3ty3_r0000gp/T/tmpLo8aNP/user/ft_swap:
+total 8
+-rw-r--r--  1 deepthought  deepthought  971 May  7 11:27 ft_swap.c
+
+/var/folders/nx/m9ycfh6d5vsd7jb_gh3ty3_r0000gp/T/tmpLo8aNP/user/lcm:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1141 May  7 11:27 lcm.c
+
+/var/folders/nx/m9ycfh6d5vsd7jb_gh3ty3_r0000gp/T/tmpLo8aNP/user/only_z:
+total 8
+-rw-r--r--  1 deepthought  deepthought  965 May  7 11:27 only_z.c
+ 
+= lcm ==========================================================================
+$> gcc -Wextra -Wall -Werror main.c lcm.c -o user_exe 
+lcm.c:22:11: error: comparison of integers of different signs: 'int' and 'unsigned int' [-Werror,-Wsign-compare]
+        while (i <= a && i <= b)
+               ~ ^  ~
+lcm.c:22:21: error: comparison of integers of different signs: 'int' and 'unsigned int' [-Werror,-Wsign-compare]
+        while (i <= a && i <= b)
+                         ~ ^  ~
+2 errors generated.
+
+Could not compile 'user_exe'
+Grade: 0
+
+= Final grade: 0 ===============================================================
