@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/02 11:40:33 by exam              #+#    #+#             */
-/*   Updated: 2019/07/08 22:06:33 by lusanche         ###   ########.fr       */
+/*   Created: 2019/07/09 10:53:12 by exam              #+#    #+#             */
+/*   Updated: 2019/07/15 20:54:11 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,24 @@ void	ft_swap(int *a, int *b)
 
 void	sort_int_tab(int *tab, unsigned int size)
 {
-	int		*first;
-	int		*second;
+	int		*a;
+	int		*b;
 	int		size_c;
 
-	first = tab;
+	a = tab;
 	--size;
 	while (size)
 	{
+		b = a + 1;
 		size_c = size;
-		second = first + 1;
 		while (size_c--)
 		{
-			if (*first > *second)
-				ft_swap(&(*first), &(*second));
-			++second;
+			if (*a > *b)
+				ft_swap(a , b);
+			++b;
 		}
-		++first;
 		--size;
+		++a;
 	}
 }
 

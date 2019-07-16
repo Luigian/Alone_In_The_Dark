@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   brainf.c                                           :+:      :+:    :+:   */
+/*   brainfuck.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/12 09:03:24 by lusanche          #+#    #+#             */
-/*   Updated: 2019/07/12 09:21:26 by lusanche         ###   ########.fr       */
+/*   Created: 2019/07/15 21:14:57 by lusanche          #+#    #+#             */
+/*   Updated: 2019/07/15 21:35:48 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,39 @@
 
 int		go_match(char *s, int i)
 {
-	int		bal;
-	
-	bal = 0;
-	if (s[i] == '[')
-	{
-		++i;
-		while (s[i] != ']' || bal != 0)
+		int		bal;
+		
+		bal = 0;
+		if (s[i] == '[')
 		{
-			if (s[i] == '[')
-				++bal;
-			else if (s[i] == ']')
-				--bal;
 			++i;
+			while (s[i] != ']' || bal != 0)
+			{
+				if (s[i] == '[')
+					++bal;
+				else if (s[i] == ']')
+					--bal;
+				++i;
+			}
 		}
-	}
-	else if (s[i] == ']')
-	{
-		--i;
-		while (s[i] != '[' || bal != 0)
+		else if (s[i] == ']')
 		{
-			if (s[i] == ']')
-				++bal;
-			else if (s[i] == '[')
-				--bal;
 			--i;
+			while (s[i] != '[' || bal != 0)
+			{
+				if (s[i] == ']')
+					++bal;
+				else if (s[i] == '[')
+					--bal;
+				--i;
+			}
 		}
-	}
-	return (--i);
+		return (--i);
 }
 
-void	brainiak(char *s)
+void	brain(char *s)
 {
-	char	a[4096];
+	char	a[2048];
 	int		i;
 	int		j;
 	int		z;
@@ -54,8 +54,8 @@ void	brainiak(char *s)
 	i = 0;
 	j = 0;
 	z = 0;
-	while (z < 4096)
-		a[z++] = 0;
+	while (z < 2048)
+		a[z++] = 0;		
 	while (s[i])
 	{
 		if (s[i] == '>')
@@ -65,7 +65,7 @@ void	brainiak(char *s)
 		else if (s[i] == '+')
 			a[j]++;
 		else if (s[i] == '-')
-			a[j]--;		
+			a[j]--;
 		else if (s[i] == '.')
 			write(1, &a[j], 1);
 		else if (s[i] == '[')
@@ -85,7 +85,7 @@ void	brainiak(char *s)
 int		main(int ac, char **av)
 {
 	if (ac == 2)
-		brainiak(av[1]);
+		brain(av[1]);
 	write(1, "\n", 1);
 	return (0);
 }

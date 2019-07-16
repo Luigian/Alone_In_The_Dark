@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   repeat_alpha.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/17 13:17:46 by lusanche          #+#    #+#             */
-/*   Updated: 2019/06/17 14:06:50 by lusanche         ###   ########.fr       */
+/*   Created: 2019/07/09 09:08:05 by exam              #+#    #+#             */
+/*   Updated: 2019/07/09 09:17:55 by exam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,27 @@
 
 void	repeat_alpha(char *s)
 {
-	int		n;
-	
+	int		rep;
+	char	c;
+
 	while (*s)
 	{
+		c = *s;
+		rep = 1;
 		if (*s >= 'a' && *s <= 'z')
-		{
-			n = *s - 96;
-			while (n--)
-				write(1, &(*s), 1);			
-		}
+			rep = *s - 'a' + 1;
 		else if (*s >= 'A' && *s <= 'Z')
-		{
-			n = *s - 64;
-			while (n--)
-				write(1, &(*s), 1);
-		}
-		else
-			write(1, &(*s), 1);
+			rep = *s - 'A' + 1;
+		while (rep--)
+			write(1, &c, 1);
 		++s;
 	}
-}	
+}
 
 int		main(int ac, char **av)
 {
 	if (ac == 2)
-	{
 		repeat_alpha(av[1]);
-	}
 	write(1, "\n", 1);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lcm.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/13 13:08:10 by lusanche          #+#    #+#             */
-/*   Updated: 2019/05/13 13:16:07 by lusanche         ###   ########.fr       */
+/*   Created: 2019/07/09 10:25:42 by exam              #+#    #+#             */
+/*   Updated: 2019/07/15 20:47:00 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,25 @@
 
 unsigned int	lcm(unsigned int a, unsigned int b)
 {
-	unsigned int i;
-	unsigned int hcf;
+	unsigned int		p;
+	unsigned int		hcf;
 	
 	if (a == 0 || b == 0)
 		return (0);
-	i = 1;
-	hcf = 0;
-	while (i <= a && i <= b)
+	p = 2;
+	hcf = 1;
+	while (p <= a && p <= b)
 	{
-		if (a % i == 0 && b % i == 0)
-			if (i > hcf)
-				hcf = i;
-		++i;
+		if (a % p == 0 && b % p == 0)
+			if (p > hcf)
+				hcf = p;
+		++p;
 	}
 	return ((a * b) / hcf);
 }
 
 int		main(void)
 {
-	printf("%d\n", lcm(0, 20));
+	printf("%d\n", lcm(60, 40));
 	return (0);
 }
-
