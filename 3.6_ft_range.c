@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/30 17:19:17 by lusanche          #+#    #+#             */
-/*   Updated: 2019/05/30 17:54:16 by lusanche         ###   ########.fr       */
+/*   Created: 2019/07/22 20:59:23 by lusanche          #+#    #+#             */
+/*   Updated: 2019/07/22 21:00:56 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,34 @@
 
 int		*ft_range(int start, int end)
 {
-	int		len;
 	int		*a;
+	int		*beg;
+	int		adv;
+	int		len;
 
-	len = (start >= end) ? (start - end) : (end - start);
-	if (!(a = (int *)malloc(sizeof(int) * len + 1)))
+	adv = 0;
+	len = 0;
+	if (start > end)
+	{
+		len = (start - end);
+		adv = -1;
+	}
+	else if (start < end)
+	{
+		len = (end - start);
+		adv = 1;
+	}
+	++len;
+	if (!(a = (int *)malloc(sizeof(int) * len)))
 		return (0);
-	while (end != start)
+	beg = a;
+	while (len--)
 	{
 		*a = start;
+		start += adv;
 		++a;
-		(start > end) ? (start--) : (start++);
 	}
-	*a = start;
-	return (a - len);
+	return (beg);
 }
 
 int		main(void)
@@ -36,7 +50,6 @@ int		main(void)
 	int		*nums;
 
 	nums = ft_range(-3, 1);
-	printf("%d\n", *nums);
 	printf("%d\n", nums[0]);
 	printf("%d\n", nums[1]);
 	printf("%d\n", nums[2]);
@@ -44,3 +57,4 @@ int		main(void)
 	printf("%d\n", nums[4]);
 	return (0);
 }
+

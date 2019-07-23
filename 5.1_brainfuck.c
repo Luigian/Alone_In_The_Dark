@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/15 21:14:57 by lusanche          #+#    #+#             */
-/*   Updated: 2019/07/15 21:35:48 by lusanche         ###   ########.fr       */
+/*   Created: 2019/07/22 18:53:36 by lusanche          #+#    #+#             */
+/*   Updated: 2019/07/22 19:19:10 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,68 +14,68 @@
 
 int		go_match(char *s, int i)
 {
-		int		bal;
-		
-		bal = 0;
-		if (s[i] == '[')
+	int 	bal;
+	
+	bal = 0;
+	if (s[i] == '[')
+	{
+		++i;
+		while (s[i] != ']' || bal != 0)
 		{
+			if (s[i] == '[')
+				++bal;
+			else if (s[i] == ']')
+				--bal;
 			++i;
-			while (s[i] != ']' || bal != 0)
-			{
-				if (s[i] == '[')
-					++bal;
-				else if (s[i] == ']')
-					--bal;
-				++i;
-			}
 		}
-		else if (s[i] == ']')
+	}
+	else if (s[i] == ']')
+	{
+		--i;
+		while (s[i] != '[' || bal != 0)
 		{
+			if (s[i] == ']')
+				++bal;
+			else if (s[i] == '[')
+				--bal;
 			--i;
-			while (s[i] != '[' || bal != 0)
-			{
-				if (s[i] == ']')
-					++bal;
-				else if (s[i] == '[')
-					--bal;
-				--i;
-			}
 		}
-		return (--i);
+	}
+	return (--i);
 }
 
-void	brain(char *s)
+void	brainfuck(char *s)
 {
 	char	a[2048];
 	int		i;
-	int		j;
+	int		x;
 	int		z;
 
 	i = 0;
-	j = 0;
+	x = 0;
 	z = 0;
-	while (z < 2048)
-		a[z++] = 0;		
+	while (z < 2028)
+		a[z++] = 0;
 	while (s[i])
 	{
 		if (s[i] == '>')
-			++j;
+			++x;
 		else if (s[i] == '<')
-			--j;
+			--x;
 		else if (s[i] == '+')
-			a[j]++;
+			a[x]++;
 		else if (s[i] == '-')
-			a[j]--;
+			a[x]--;
 		else if (s[i] == '.')
-			write(1, &a[j], 1);
+			write(1, &a[x], 1);
 		else if (s[i] == '[')
 		{
-			if (a[j] == 0)
+			if (a[x] == 0)
 				i = go_match(s, i);
 		}
 		else if (s[i] == ']')
 		{
-			if (a[j] != 0)
+			if (a[x] != 0)
 				i = go_match(s, i);
 		}
 		++i;
@@ -85,7 +85,7 @@ void	brain(char *s)
 int		main(int ac, char **av)
 {
 	if (ac == 2)
-		brain(av[1]);
+		brainfuck(av[1]);
 	write(1, "\n", 1);
 	return (0);
 }

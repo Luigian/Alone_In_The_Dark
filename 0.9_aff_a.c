@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   aff_a.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/22 20:51:23 by lusanche          #+#    #+#             */
-/*   Updated: 2019/07/22 20:52:57 by lusanche         ###   ########.fr       */
+/*   Created: 2019/07/22 20:01:43 by lusanche          #+#    #+#             */
+/*   Updated: 2019/07/22 20:46:30 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-char	*ft_strcpy(char *s1, char *s2)
+void	aff_a(char *s)
 {
-	char	*beg;
+	int		a;
 	
-	beg = s1;
-	while(*s2)
+	a = 0;
+	while (*s)
 	{
-		*s1 = *s2;
-		++s1;
-		++s2;
+		if (*s == 'a')
+			a = 1;
+		++s;
 	}
-	*s1 = *s2;
-	return (beg);
+	if (a)
+		write (1, "a", 1);
 }
 
-int		main(void)
+int		main(int ac, char **av)
 {
-	char s[50];
-	printf("%s\n", ft_strcpy(s, "kamelot"));
+	if (ac == 2)
+		aff_a(av[1]);
+	else
+		write(1, "a", 1);
+	write(1, "\n", 1);
 	return (0);
 }
-
