@@ -5,59 +5,48 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/22 21:03:56 by lusanche          #+#    #+#             */
-/*   Updated: 2019/07/23 14:21:43 by lusanche         ###   ########.fr       */
+/*   Created: 2019/08/05 17:43:02 by lusanche          #+#    #+#             */
+/*   Updated: 2019/08/05 20:25:21 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-typedef struct      s_list
+typedef struct		s_list
 {
-    struct s_list   *next;
-    void            *data;
-}                   t_list;
+	struct s_list	*next;
+	void			*data;
+}					t_list;
+
+int			comparation(void *a, void *b);
+void		ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)());
+void		print_list(t_list *beg);
+t_list		*create_list(void);
+
+int		main(void)
+{
+	t_list		*beg;
+	void		*reference;
+
+	if (!(beg = create_list()))
+		return (0);
+	print_list(beg);
+	reference = "Feb";
+	ft_list_remove_if(&beg, reference, comparation);
+	print_list(beg);
+	return (0);
+}
 
 int		comparation(void *a, void *b)
 {
-	if (a == b)
-		return (0);
-	else
-		return (1);
+	return (a == b ? 0 : 1);
 }
-
-/*
-void	ft_list_remove_if(t_list **begin_list, int data_ref, int (*cmp)())
-{
-	t_list	*curr;
-	t_list	*tmp;
-
-	while (*begin_list && cmp((*begin_list)->data, data_ref) == 0)
-	{
-		curr = *begin_list;
-		*begin_list = (*begin_list)->next;
-		free(curr);
-	}
-	curr = *begin_list;
-	while (curr && curr->next)
-	{
-		if (cmp(curr->next->data, data_ref) == 0)
-		{
-			tmp = curr->next;
-			curr->next = tmp->next;
-			free(tmp);
-		}
-		else
-			curr = curr->next;
-	}
-}
-*/
 
 void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 {
-	t_list	*trav;
-	t_list	*post;
+	t_list		*trav;
+	t_list		*post;
 
 	while (*begin_list && !(cmp((*begin_list)->data, data_ref)))
 	{
@@ -79,45 +68,44 @@ void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 	}
 }
 
-int		main (void)
+void	print_list(t_list *beg)
 {
-	t_list	*beg;
-	t_list	*create;
-	t_list	*print;
-	void	*ref;
-	int		size;
-	int		i;
-	char 	*name[] = { "Jan", "Feb", "Mar", "Abr", "May", "Jun" };
+	t_list		*trav;
 
-	beg = malloc(sizeof(t_list) * 4);
-	create = beg;
-	print = beg;
-	ref =  "Feb"; 
+	trav = beg;
+	while (trav)
+	{
+		printf("[%s]", trav->data);
+		trav = trav->next;
+		trav ? printf(" ") : printf("\n");
+	}
+}
+
+t_list	*create_list(void)
+{
+	t_list		*beg;
+	t_list		*trav;
+	char		*months[] = { "Jan", "Feb", "Mar", "Apr", "May" };
+	int			size;
+	int			i;
+
+	if (!(beg = (t_list *)malloc(sizeof(t_list) * 1)))
+		return (NULL);
+	trav = beg;
 	size = 5;
 	i = 0;
 	while (size--)
 	{
-		create->data = name[i++];
-		create->next = malloc(sizeof(t_list) * 4);
-		create = create->next;
+		trav->data = months[i];
+		++i;
+		if (size)
+		{
+			if (!(trav->next = (t_list *)malloc(sizeof(t_list) * 1)))
+				return (NULL);
+			trav = trav->next;
+		}
+		else
+			trav->next = NULL;
 	}
-	create->data = name[i];
-	create->next = NULL;
-	while (print)
-	{
-		printf("[%s]", print->data);
-		print = print->next;
-	}
-	printf("\n");
-	
-	ft_list_remove_if(&beg, ref, comparation);
-	
-	print = beg;
-	while (print)
-	{
-		printf("[%s]", print->data);
-		print = print->next;
-	}
-	printf("\n");
-	return (0);
+	return (beg);
 }

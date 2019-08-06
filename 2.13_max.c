@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hidenp.c                                           :+:      :+:    :+:   */
+/*   max.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/29 18:36:33 by lusanche          #+#    #+#             */
-/*   Updated: 2019/07/29 18:38:39 by lusanche         ###   ########.fr       */
+/*   Created: 2019/07/29 18:30:05 by lusanche          #+#    #+#             */
+/*   Updated: 2019/07/29 18:31:04 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	hidenp(char *s1, char *s2)
+int		max(int *tab, unsigned int len)
 {
-	while (*s1 && *s2)
+	int		i;
+	int		bigger;
+
+	if (len == 0)
+		return (0);
+	i = 0;
+	bigger = 0;
+	while (len--)
 	{
-		if (*s1 == *s2)
-		{
-			++s1;
-			++s2;
-		}
-		else
-			++s2;
+		if (tab[i] > bigger)
+			bigger = tab[i];
+		++i;
 	}
-	if (*s1 == '\0')
-		write (1, "1", 1);
-	else
-		write (1, "0", 1);
+	return (bigger);
 }
 
-int		main(int ac, char **av)
+int		main(void)
 {
-	if (ac == 3)
-		hidenp(av[1], av[2]);
-	write (1, "\n", 1);
+	int		tab[] = {3, 656, 78, 99};
+
+		printf("%d\n", max(tab, 4));
 	return (0);
 }
