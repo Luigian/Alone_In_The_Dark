@@ -1,0 +1,154 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z1r8p3.42.us.org
+Darwin 17.5.0 x86_64
+$> date
+Tue Aug  6 11:11:30 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190806/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/r6/clljmsv16d9dw56k6hb4r7gh0000gp/T/tmpW9W1vi/user log --pretty='%H - %an, %ad : %s'
+7964af85b58f1bd6bc9bfa763862029bc6c6588e - Exam 42, Tue Aug 6 11:11:21 2019 -0700 : union
+7db5c9bde795c07ac666deff0d6b014fa11928cb - Exam 42, Tue Aug 6 10:07:58 2019 -0700 : fizzbuzz
+675d87430bbc4625cf756afd43b61898d6869717 - Exam 42, Tue Aug 6 09:05:05 2019 -0700 : aff_z
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/r6/clljmsv16d9dw56k6hb4r7gh0000gp/T/tmpW9W1vi/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  715 Aug  6 11:11 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Aug  6 11:11 aff_z
+drwxr-xr-x  3 deepthought  deepthought  102 Aug  6 11:11 fizzbuzz
+drwxr-xr-x  3 deepthought  deepthought  102 Aug  6 11:11 union
+
+/var/folders/r6/clljmsv16d9dw56k6hb4r7gh0000gp/T/tmpW9W1vi/user/aff_z:
+total 8
+-rw-r--r--  1 deepthought  deepthought  966 Aug  6 11:11 aff_z.c
+
+/var/folders/r6/clljmsv16d9dw56k6hb4r7gh0000gp/T/tmpW9W1vi/user/fizzbuzz:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1421 Aug  6 11:11 fizzbuzz.c
+
+/var/folders/r6/clljmsv16d9dw56k6hb4r7gh0000gp/T/tmpW9W1vi/user/union:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1470 Aug  6 11:11 union.c
+ 
+= union ========================================================================
+$> gcc -Wextra -Wall -Werror union.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./tzwziwdph1zhdo0oj38sxzqz 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./r0mau6hlx0mhv4fqbfz61mk3 "	 " " 		  "
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./7jqgxnvpgfabu0x27mh7jhbz "1f6NGgRI"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./e8ca5zs9igbfytn1h47ka97s "WgIlCJ3TdibLz" "BNRViG1qDtcbj"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./xw8sz4qm6ya6itr839zfvmjl "Y78GizdXlmAgjZNE" "AkHCWGFTK1obySf"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./28jkrn4uhc1uepyxim8lry3f "0JkOjeQ612Fq" "vrUBt8p3j7"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./pbvz0tj5rljyp8ktmi07o7uy "prWbVHT9gCi" "ZV7T0R9rveB"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./z260z5iyfl7zhek8ozjacqrz "WU9oDlVxA6fZFq" "zpESxKcqMjFB"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./cp645z2y1656k8xanbp8hhiy "wY4F5P6dSI" "5Vyh0nSwv"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./287dxanxleaqzq178sf2rj93 "AtkvUEhpawr53liN" "JV7KXwpQf"
+$> diff -U 3 user_output_test10 test10.output | cat -e
+
+Diff OK :D
+= Test 11 ==================================================
+$> ./it45uxjnqw863itvn9yeg226 "f3wdziJRmWMu" "qBSPfQ6b0"
+$> diff -U 3 user_output_test11 test11.output | cat -e
+
+Diff OK :D
+= Test 12 ==================================================
+$> ./3o6r8usauyzuw928o6otmfvq "VDP" "hudQIsbl"
+$> diff -U 3 user_output_test12 test12.output | cat -e
+
+Diff OK :D
+= Test 13 ==================================================
+$> ./j4zjams3ll6895x1i3teghdi "VsTagFj" "hADPTzsCK7"
+$> diff -U 3 user_output_test13 test13.output | cat -e
+
+Diff OK :D
+= Test 14 ==================================================
+$> ./7mxk2ia2h5x9ouvpi8oxhnqk "3ciA7gfpPv0E" "IJSZd"
+$> diff -U 3 user_output_test14 test14.output | cat -e
+
+Diff OK :D
+= Test 15 ==================================================
+$> ./pqk3bek1ey2qc1gee7kfcwl9 "pCZUQl4f58KIkOAa" "lQoTL13YC"
+$> diff -U 3 user_output_test15 test15.output | cat -e
+
+Diff OK :D
+= Test 16 ==================================================
+$> ./7ufxvl6ty7shddbmnfbd0npr "oPA" "pT0bCc"
+$> diff -U 3 user_output_test16 test16.output | cat -e
+
+Diff OK :D
+= Test 17 ==================================================
+$> ./opktfc8v4azxw6gjyyqcvruq "q0ExJ" "vFmy6Oc9h8GglZ1q"
+$> diff -U 3 user_output_test17 test17.output | cat -e
+
+Diff OK :D
+= Test 18 ==================================================
+$> ./zt9ni8o2zvp1kins736ravh4 "ecojhp3O7VbN" "dberRD93oOPgyiY"
+$> diff -U 3 user_output_test18 test18.output | cat -e
+
+Diff OK :D
+= Test 19 ==================================================
+$> ./mokvodu2mdcp5oqmo5auw317 "xsqa78F0mTrvS" "G3pQq"
+$> diff -U 3 user_output_test19 test19.output | cat -e
+
+Diff OK :D
+= Test 20 ==================================================
+$> ./oqklljgfd8qvx4jehivji5ph "IZhfMF" "6Nt1490qwGLWQB8"
+$> diff -U 3 user_output_test20 test20.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

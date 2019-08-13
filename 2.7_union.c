@@ -5,57 +5,66 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/10 12:39:44 by lusanche          #+#    #+#             */
-/*   Updated: 2019/06/10 13:52:14 by lusanche         ###   ########.fr       */
+/*   Created: 2019/08/06 10:09:23 by exam              #+#    #+#             */
+/*   Updated: 2019/08/12 12:01:39 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_cat(char *s1, char *s2)
+int		single(char *c, char l)
 {
 	int		i;
-	
-	i = 0;
-	while (s1[i])
-		i++;
-	while (*s2)
-		s1[i++] = *s2++;
-	s1[i] = *s2;
-	return (s1);
-}
 
-int		is_first(char *s, int ind)
-{
-	int		i;
-	
 	i = 0;
-	while (i != ind)
+	while (c[i])
 	{
-		if (s[i] != s[ind])
-			++i;
-		else
+		if (c[i] == l)
 			return (0);
+		++i;
 	}
 	return (1);
 }
 
-int		main(int ac, char **av)
+void	ft_putstr(char *s)
 {
+	while (*s)
+		write(1, s++, 1);
+}
+
+void	ft_union(char *a, char *b)
+{
+	char	c[500];
 	int		i;
-	
-	if (ac-- == 3)
+
+	i = 0;
+	c[499] = '\0';
+	while (*a)
 	{
-		ft_cat(av[1], av[2]);
-		i = 0;
-		++av;
-		while ((*av)[i])
+		if (single(c, *a))
 		{
-			if (is_first(*av, i))
-				write(1, &((*av)[i]), 1);
+			c[i] = *a;
 			++i;
 		}
+		++a;
 	}
+	while (*b)
+	{
+		if (single(c, *b))
+		{
+			c[i] = *b;
+			++i;
+		}
+		++b;
+	}
+	c[i] = '\0';
+	ft_putstr(c);
+}
+
+int		main(int ac, char **av)
+{
+	if (ac == 3)
+		ft_union(av[1], av[2]);
 	write(1, "\n", 1);
 	return (0);
 }

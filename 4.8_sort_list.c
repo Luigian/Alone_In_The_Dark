@@ -6,11 +6,10 @@
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/01 19:00:25 by lusanche          #+#    #+#             */
-/*   Updated: 2019/08/05 21:24:26 by lusanche         ###   ########.fr       */
+/*   Updated: 2019/08/12 22:01:14 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "list.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -20,6 +19,36 @@ typedef struct 		s_list
 	struct s_list	*next;
 }					t_list;
 
+t_list	*create_list(void);
+t_list		*sort_list(t_list *lst, int (*cmp)(int, int));
+int		ascending(int a, int b);
+void	ft_swap(int *a, int *b);
+void	print_list(t_list *beg);
+
+int		main (void)
+{
+	t_list	*beg;
+	
+	if (!(beg = create_list()))
+	   return (0);	
+	sort_list(beg, ascending);
+	print_list(beg);
+	return (0);
+}
+
+void	print_list(t_list *beg)
+{
+	t_list	*trav;
+
+	trav = beg;
+	while (trav)
+	{
+		printf("[%d]", trav->data);
+		trav = trav->next;
+		trav ? printf(" ") : printf("\n");
+	}
+}
+
 void	ft_swap(int *a, int *b)
 {
 	int		temp;
@@ -27,6 +56,11 @@ void	ft_swap(int *a, int *b)
 	temp = *a;
 	*a = *b;
 	*b = temp;
+}
+
+int		ascending(int a, int b)
+{
+	return (a <= b);
 }
 
 t_list		*sort_list(t_list *lst, int (*cmp)(int, int))
@@ -49,43 +83,31 @@ t_list		*sort_list(t_list *lst, int (*cmp)(int, int))
 	return (begin);
 }
 
-int		ascending(int a, int b)
+t_list	*create_list(void)
 {
-	return (a <= b);
-}
+	t_list *beg;
+	t_list *trav;
+	int		dates[] = {1986, 1980, 1954, 2019, 1984, 1948};
+   	int		size;
+	int		i;	
 
-int		main (void)
-{
-	t_list	*list;
-	t_list	*beg;
-	t_list	*trav;
-	int		i;
-	
-	list = malloc(sizeof(t_list) * 4);
-	beg = list;
-	trav = list;
-	i = 10;
-	while (i)
+	if (!(beg = (t_list *)malloc(sizeof(t_list) * 1)))
+		return (NULL);
+	trav = beg;
+	size = 6;
+	i = 0;
+	while (size--)
 	{
-		list->data = i;
-		list->next = malloc(sizeof(t_list) * 4);
-		list = list->next;
-		--i;
+		trav->data = dates[i];
+		++i;
+		if (size)
+		{
+			if (!(trav->next = (t_list *)malloc(sizeof(t_list) * 1)))
+				return (NULL);
+			trav = trav->next;
+		}
+		else
+			trav->next = NULL;
 	}
-	list->data = i;
-	list->next = NULL;
-	while (trav)
-	{
-		printf("[%d]", trav->data);
-		trav = trav->next;
-	}
-	printf("\n");
-	sort_list(beg, ascending);
-	while (beg)
-	{
-		printf("[%d]", beg->data);
-		beg = beg->next;
-	}
-	printf("\n");
-	return (0);
+	return (beg);
 }

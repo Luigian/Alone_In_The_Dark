@@ -6,7 +6,7 @@
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 17:43:02 by lusanche          #+#    #+#             */
-/*   Updated: 2019/08/05 20:25:21 by lusanche         ###   ########.fr       */
+/*   Updated: 2019/08/12 21:20:54 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ typedef struct		s_list
 	void			*data;
 }					t_list;
 
-int			comparation(void *a, void *b);
-void		ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)());
-void		print_list(t_list *beg);
 t_list		*create_list(void);
+void		ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)());
+int			comparation(void *a, void *b);
+void		print_list(t_list *beg);
 
 int		main(void)
 {
@@ -36,6 +36,19 @@ int		main(void)
 	ft_list_remove_if(&beg, reference, comparation);
 	print_list(beg);
 	return (0);
+}
+
+void	print_list(t_list *beg)
+{
+	t_list		*trav;
+
+	trav = beg;
+	while (trav)
+	{
+		printf("[%s]", trav->data);
+		trav = trav->next;
+		trav ? printf(" ") : printf("\n");
+	}
 }
 
 int		comparation(void *a, void *b)
@@ -65,19 +78,6 @@ void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 		}
 		else
 			trav = trav->next;
-	}
-}
-
-void	print_list(t_list *beg)
-{
-	t_list		*trav;
-
-	trav = beg;
-	while (trav)
-	{
-		printf("[%s]", trav->data);
-		trav = trav->next;
-		trav ? printf(" ") : printf("\n");
 	}
 }
 
