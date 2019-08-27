@@ -1,0 +1,154 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z2r2p5.42.us.org
+Darwin 17.7.0 x86_64
+$> date
+Tue Aug 20 09:45:41 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin17.7.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin17.7.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190820/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/2x/v2zc03jd05zgj472hlt08cr00000gp/T/tmpQAJpix/user log --pretty='%H - %an, %ad : %s'
+da7d00ad87e3e5c8deab41d5d822a8e0ba7b6171 - Exam 42, Tue Aug 20 09:45:16 2019 -0700 : inter
+4fa65d5fd8a480c9668928925471ce035422b94d - Exam 42, Tue Aug 20 09:23:33 2019 -0700 : first_word
+58d79ce90e1c2e6bbbd362ec8a0fb6c5a18d4d74 - Exam 42, Tue Aug 20 09:11:52 2019 -0700 : aff_a
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/2x/v2zc03jd05zgj472hlt08cr00000gp/T/tmpQAJpix/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  719 Aug 20 09:45 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Aug 20 09:45 aff_a
+drwxr-xr-x  3 deepthought  deepthought  102 Aug 20 09:45 first_word
+drwxr-xr-x  3 deepthought  deepthought  102 Aug 20 09:45 inter
+
+/var/folders/2x/v2zc03jd05zgj472hlt08cr00000gp/T/tmpQAJpix/user/aff_a:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1174 Aug 20 09:45 aff_a.c
+
+/var/folders/2x/v2zc03jd05zgj472hlt08cr00000gp/T/tmpQAJpix/user/first_word:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1143 Aug 20 09:45 first_word.c
+
+/var/folders/2x/v2zc03jd05zgj472hlt08cr00000gp/T/tmpQAJpix/user/inter:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1404 Aug 20 09:45 inter.c
+ 
+= inter ========================================================================
+$> gcc -Wextra -Wall -Werror inter.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./90h5uyd9kwykf58pos750meu 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./nm1dxwo2ui3ijws92dcec3vt "salut a tous tout le monde"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./9gjijtt8vjpprwyv9a1ng491 "salut" "a" "tous" "tout" "le" "monde"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./bs2wx81n5t01iorqnexo0odm "llo" "helllo"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./wslq8ceqbve9o68ew4zon7hh "XGyOv2UA85VgBbSof" "GvUAVbf"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./yor36mog2g2lbrol1ijkegmc "jsYkO" "YO"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./qwus36pbcljol2p3w4rebenx "RExrNo4" "U3gMxcfw52RAkVXtE"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./afpeue1a1m4494qagadqmxl9 "hxA7yCTlfo4WsHk" "hx7CfWHk"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./mnudm8gwhrcrnlt8rpnl013b "akTIPUW2ZlqQX" "aTUZlX"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./cg83ctuptyv49rm6s5q3mvhb "8xJBkiSY4" "8JBSY"
+$> diff -U 3 user_output_test10 test10.output | cat -e
+
+Diff OK :D
+= Test 11 ==================================================
+$> ./a4lkqvz2cre3abh3g8lslcx7 "Ptb1me9j08Ni5qDLs" "0zR9KpLM3Pa5t"
+$> diff -U 3 user_output_test11 test11.output | cat -e
+
+Diff OK :D
+= Test 12 ==================================================
+$> ./pcnne3pqtmlga11z2snrf2ix "EBhz4wLb" "Bhw"
+$> diff -U 3 user_output_test12 test12.output | cat -e
+
+Diff OK :D
+= Test 13 ==================================================
+$> ./cajci4gr9fek2xv8ae3svejd "Nlc4kbpzsRev16If" "YeBripAckgvl"
+$> diff -U 3 user_output_test13 test13.output | cat -e
+
+Diff OK :D
+= Test 14 ==================================================
+$> ./jek4ug54angru55eyi8tczwp "NYn8wzFgCtI" "LWBxOrN"
+$> diff -U 3 user_output_test14 test14.output | cat -e
+
+Diff OK :D
+= Test 15 ==================================================
+$> ./9jr166qj4vbzpi9xwuoynq6j "UWSKTnus" "STns"
+$> diff -U 3 user_output_test15 test15.output | cat -e
+
+Diff OK :D
+= Test 16 ==================================================
+$> ./u99xzey23h05275syd0zr2d3 "tm97MwAeYJu" "5Ou3"
+$> diff -U 3 user_output_test16 test16.output | cat -e
+
+Diff OK :D
+= Test 17 ==================================================
+$> ./qpiakcqrzduk0uxhzh82yiuv "J0jY4tqnVsINfzk" "ZEK6iI2Q93x"
+$> diff -U 3 user_output_test17 test17.output | cat -e
+
+Diff OK :D
+= Test 18 ==================================================
+$> ./potslzys6zltipfekxm1t6pr "xcjHuh3DtpB2Vz" "rRkVgT06ai1F"
+$> diff -U 3 user_output_test18 test18.output | cat -e
+
+Diff OK :D
+= Test 19 ==================================================
+$> ./ee7u9d6zyqo2vbo8ia28z28s "w4J8EcdgSC51" "eFRCZMHV"
+$> diff -U 3 user_output_test19 test19.output | cat -e
+
+Diff OK :D
+= Test 20 ==================================================
+$> ./e4hokytrf4pwwwzq8ovjwz9c "ugjsPZ7oOcDr2elh" "ugP7cre"
+$> diff -U 3 user_output_test20 test20.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

@@ -5,64 +5,61 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/24 21:57:38 by lusanche          #+#    #+#             */
-/*   Updated: 2019/06/24 22:01:38 by lusanche         ###   ########.fr       */
+/*   Created: 2019/08/20 10:35:12 by exam              #+#    #+#             */
+/*   Updated: 2019/08/26 22:07:30 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-int		ft_nbrlen(int n)
+int		nbr_len(int nbr)
 {
-	int		len;
-	
-	len = 0;
-	while (n > 0)
+	int		counter;
+
+	counter = 0;
+	while (nbr > 0)
 	{
-		++len;
-		n /= 10;
+		++counter;
+		nbr /= 10;
 	}
-	return (len);
+	return (counter);
 }
 
 char	*ft_itoa(int nbr)
 {
-	char	*ret;
-	int		len;
-	int		neg;
-	int		i;
-	
-	len = 0;
-	neg = 0;
+	int		slen;
+	int		nlen;
+	int		tlen;
+	char	*result;
+
+	slen = 0;
+	nlen = 0;
+	tlen = 0;
 	if (nbr == 0)
-		++len;
-	else if (nbr < 0)
+		return ("0");
+	if (nbr < 0)
 	{
 		if (nbr == -2147483648)
-			return ("-2147483648");		
-		++len;
+		   return ("-2147483648");
+		slen = 1;
 		nbr *= -1;
-		neg = 1;
 	}
-	len += ft_nbrlen(nbr);	
-	i = len;
-	if (!(ret = (char *)malloc(sizeof(char) * len + 1)))
-		return (0);
-	ret[i--] = '\0';
-	if (neg)
+	nlen = nbr_len(nbr);
+	tlen = slen + nlen;
+	if (!(result = (char *)malloc(sizeof(char) * tlen + 1)))
+		return (NULL);
+	result[tlen] = '\0';
+	while (tlen--)
 	{
-		ret[0] = '-';
-		--len;	
+		if (!nbr)
+			result[tlen] = '-';
+		else
+		{	result[tlen] = (nbr % 10) + 48;
+			nbr /= 10;
+		}
 	}
-	while (len--)
-	{
-		ret[i] = (nbr % 10) + 48;
-		nbr /= 10;
-		--i;
-	}
-	return (ret);
-
+	return (result);
 }
 
 int		main(void)

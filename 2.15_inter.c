@@ -1,38 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_a.c                                            :+:      :+:    :+:   */
+/*   lusanche.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/20 09:02:22 by exam              #+#    #+#             */
-/*   Updated: 2019/08/20 09:09:08 by exam             ###   ########.fr       */
+/*   Created: 2019/08/20 09:24:46 by exam              #+#    #+#             */
+/*   Updated: 2019/08/26 21:13:46 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		aff_a(char *s)
+int		partner(int i, char *a, char *b)
 {
-	while (*s)
+	while (*b)
 	{
-		if (*s == 'a')
+		if (a[i] == *b)
 			return (1);
-		++s;
+		++b;
 	}
 	return (0);
 }
 
+int		first(int i, char *a)
+{
+	int		x;
+	
+	x = 0;
+	while (x < i)
+	{
+		if (a[x] == a[i])
+			return (0);
+		++x;
+	}
+	return (1);
+}
+
+void	inter(char *a, char *b)
+{
+	int		i;
+
+	i = 0;
+	while (a[i])
+	{
+		if (first(i, a))
+			if (partner(i, a, b))
+				write(1, &a[i], 1);
+		++i;
+	}
+}
+
 int		main(int ac, char **av)
 {
-	if (ac == 2)
-	{
-		if (aff_a(av[1]))
-			write(1, "a\n", 2);
-		else
-			write(1, "\n", 1);
-	}
-	else
-		write(1, "a\n", 2);
+	if (ac == 3)
+		inter(av[1], av[2]);
+	write(1, "\n", 1);
 	return (0);
 }

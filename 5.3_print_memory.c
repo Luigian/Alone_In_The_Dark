@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/19 21:01:47 by lusanche          #+#    #+#             */
-/*   Updated: 2019/08/19 21:27:59 by lusanche         ###   ########.fr       */
+/*   Created: 2019/08/20 11:24:51 by exam              #+#    #+#             */
+/*   Updated: 2019/08/26 22:10:12 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,16 @@ void	ft_putchar(char c)
 
 void	print_memory(const void *addr, size_t size)
 {
-	const char		*base = "0123456789abcdef";
-	unsigned char	*str = (unsigned char *) addr;
+	const char		*base;
+	unsigned char	*str;
 	char			line[17];
-	size_t			i = 0;
+	size_t			i;
 	int				j;
 	int				nb;
 
+	base = "0123456789abcdef";
+	str = (unsigned char *) addr;
+	i = 0;
 	while (i < size || i % 16 != 0)
 	{
 		if (i < size)
@@ -37,10 +40,10 @@ void	print_memory(const void *addr, size_t size)
 			line[i % 16] = str[i] >= 32 && str[i] <= 126 ? str[i] : '.';
 		}
 		else
-			write(1, "  ", 2);
+			write (1, "  ", 2);
 		++i;
 		if (i % 2 == 0)
-			write(1, " ", 1);
+			write (1, " ", 1);
 		if (i % 16 == 0)
 		{
 			j = 0;
@@ -50,12 +53,12 @@ void	print_memory(const void *addr, size_t size)
 					break ;
 				ft_putchar(line[j++]);
 			}
-			ft_putchar('\n');
+			ft_putchar ('\n');
 		}
 	}
 }
 
-int	main(void)
+int		main(void)
 {
 	int	tab[10] = {0, 23, 150, 255,
 	              12, 16,  42, 103};
@@ -63,4 +66,3 @@ int	main(void)
 	print_memory(tab, sizeof(tab));
 	return (0);
 }
-
