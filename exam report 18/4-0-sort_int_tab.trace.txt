@@ -1,0 +1,71 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z3r1p4.42.us.org
+Darwin 17.7.0 x86_64
+$> date
+Tue Oct 15 10:47:22 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin17.7.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin17.7.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20191015/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/wg/z06bn3457cx1nc7587v51d_w0000gp/T/tmpDu0lob/user log --pretty='%H - %an, %ad : %s'
+6d8f30a04c34cb5c4ca4ac88c8c409c68fc4df22 - Exam 42, Tue Oct 15 10:46:31 2019 -0700 : sort_int_tab
+8c62c9642c788ce056fc1aad70d1197c77c4c474 - Exam 42, Tue Oct 15 10:17:15 2019 -0700 : ft_rrange
+53bb6eddae49bf1efcf5bd26e172cd343f59409f - Exam 42, Tue Oct 15 09:37:57 2019 -0700 : ft_atoi
+ea065e29cf31fcd9cbf5adb6b821a8ad653b5f49 - Exam 42, Tue Oct 15 09:18:38 2019 -0700 : ft_strcpy
+d115f79e41d55809b6a90f006f09a2134027bae5 - Exam 42, Tue Oct 15 09:07:37 2019 -0700 : only_a
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/wg/z06bn3457cx1nc7587v51d_w0000gp/T/tmpDu0lob/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1187 Oct 15 10:47 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 15 10:47 ft_atoi
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 15 10:47 ft_rrange
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 15 10:47 ft_strcpy
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 15 10:47 only_a
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 15 10:47 sort_int_tab
+
+/var/folders/wg/z06bn3457cx1nc7587v51d_w0000gp/T/tmpDu0lob/user/ft_atoi:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1293 Oct 15 10:47 ft_atoi.c
+
+/var/folders/wg/z06bn3457cx1nc7587v51d_w0000gp/T/tmpDu0lob/user/ft_rrange:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1280 Oct 15 10:47 ft_rrange.c
+
+/var/folders/wg/z06bn3457cx1nc7587v51d_w0000gp/T/tmpDu0lob/user/ft_strcpy:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1035 Oct 15 10:47 ft_strcpy.c
+
+/var/folders/wg/z06bn3457cx1nc7587v51d_w0000gp/T/tmpDu0lob/user/only_a:
+total 8
+-rw-r--r--  1 deepthought  deepthought  965 Oct 15 10:47 only_a.c
+
+/var/folders/wg/z06bn3457cx1nc7587v51d_w0000gp/T/tmpDu0lob/user/sort_int_tab:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1264 Oct 15 10:47 sort_int_tab.c
+ 
+= sort_int_tab =================================================================
+$> gcc -Wextra -Wall -Werror main.c sort_int_tab.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./5b1xg1j41tl4p4h3e9czajv6
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

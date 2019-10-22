@@ -1,0 +1,59 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z2r9p36.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Aug 27 10:02:38 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190827/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/dv/kfft9jpx4sn9kw3jr4mcv1jh0000gp/T/tmpsIrGXl/user log --pretty='%H - %an, %ad : %s'
+73d85c7138b08c37824ac52b51615217bf939db5 - Exam 42, Tue Aug 27 10:02:12 2019 -0700 : reverse_bits
+048f070f370dd076c8af384fca9bb397b08be90b - Exam 42, Tue Aug 27 09:37:20 2019 -0700 : ft_strcpy
+0b390365e339e60a7217c529c3637df724f6207d - Exam 42, Tue Aug 27 09:07:41 2019 -0700 : ft_print_numbers
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/dv/kfft9jpx4sn9kw3jr4mcv1jh0000gp/T/tmpsIrGXl/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  716 Aug 27 10:02 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Aug 27 10:02 ft_print_numbers
+drwxr-xr-x  3 deepthought  deepthought  102 Aug 27 10:02 ft_strcpy
+drwxr-xr-x  3 deepthought  deepthought  102 Aug 27 10:02 reverse_bits
+
+/var/folders/dv/kfft9jpx4sn9kw3jr4mcv1jh0000gp/T/tmpsIrGXl/user/ft_print_numbers:
+total 8
+-rw-r--r--  1 deepthought  deepthought  974 Aug 27 10:02 ft_print_numbers.c
+
+/var/folders/dv/kfft9jpx4sn9kw3jr4mcv1jh0000gp/T/tmpsIrGXl/user/ft_strcpy:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1028 Aug 27 10:02 ft_strcpy.c
+
+/var/folders/dv/kfft9jpx4sn9kw3jr4mcv1jh0000gp/T/tmpsIrGXl/user/reverse_bits:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1129 Aug 27 10:02 reverse_bits.c
+ 
+= reverse_bits =================================================================
+$> gcc -Wextra -Wall -Werror main.c reverse_bits.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./pxzurm47lhrzab1wt7bc5g7c
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

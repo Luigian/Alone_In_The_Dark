@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   rpn_calc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/13 10:53:31 by exam              #+#    #+#             */
-/*   Updated: 2019/08/19 20:57:44 by lusanche         ###   ########.fr       */
+/*   Created: 2019/10/15 10:49:07 by exam              #+#    #+#             */
+/*   Updated: 2019/10/15 12:50:24 by exam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
+#include <stdlib.h>
 
 int		do_op(int a, char c, int b)
 {
@@ -38,100 +37,72 @@ int		rpn_calc(char *s)
 	int		i;
 	int		x;
 	int		z;
-	int		n;
 
 	i = 0;
 	x = 0;
-	z = 0;	
-	while(z < 500)
-		a[z++] = 0;
-	while(s[i])
+	z = 0;
+	
+	while (z < 500)
+	   a[z++] = '\0';
+	while (*s)
 	{
-		if (s[i] >= '0' && *s <= '9')
+		if (*s >= '0' && *s <= '9')
 		{
-			a[x] = atoi(&s[i]);
+			a[x] = atoi(s);
 			++x;
-			while (s[i] >= '0' && s[i] <= '9')
-				++i;
-			--i;
-		}
-		else if (s[i] == '+' || s[i] == '-' || s[i] == '*'\
-				|| s[i] == '/' || s[i] == '%')
-		{
-			if (x == 1)
-				write(1, "Error\n", 6);
-			if ((s[i] == '/' || s[i] == '%') && a[x - 1] == 0)
+			while (*s >= '0' && *s <= '9')
+				++s;
+			if (*s != ' ')
 			{
-				write(1, "Error\n", 6);
-				return (0);
+				printf("Error\n");
+				return (1);
 			}
-			n = do_op(a[x - 2], s[i], a[x - 1]);
-			a[x - 2] = n;
-			x -= 1;	
 		}
-		++i;
+		else if (*s == ' ')
+		{
+			while (*s == ' ')
+				++s;
+		}
+		else if (*s == '+' || *s == '-' || *s == '*'\
+				|| *s == '/' || *s == '%')
+		{
+			if (x < 2)
+			{
+				printf("Error\n");
+				return (1);
+			}
+			if ((*s == '/' || *s == '%') && a[x - 1] == 0)
+			{
+				printf("Error\n");
+				return (1);
+			}
+			a[x - 2] = do_op(a[x - 2], *s, a[x - 1]);
+			x -= 1;
+			++s;
+		}
 	}
 	if (x != 1)
-		write(1, "Error\n", 6);
-	else
-		printf("%d\n", a[0]);
-	return (0);
-}
-
-int		valid(char *s)
-{
-	int		i;
-	int		numbers;
-	int		signs;
-
-	i = 0;
-	numbers = 0;
-	signs = 0;
-	if (s[i] == '+' || s[i] == '-' || s[i] == '*'\
-				|| s[i] == '/' || s[i] == '%')
-		return (0);
-	while (s[i])
 	{
-		if (s[i] >= '0' && *s <= '9')
-		{
-			++numbers;
-			while (s[i] >= '0' && s[i] <= '9')
-				++i;
-			if (s[i] && s[i] != ' ')
-				return (0);
-			else if (s[i] && s[i] == ' ')
-				++i;
-		}
-		else if (s[i] == '+' || s[i] == '-' || s[i] == '*'\
-				|| s[i] == '/' || s[i] == '%')
-		{
-			++signs;
-			++i;
-			if (s[i] && s[i] != ' ')
-				return (0);
-			else if (s[i] && s[i] == ' ')
-				++i;
-		}
-		else if (s[i] == ' ')
-			++i;
-		else 
-			return (0);
+		printf("Error\n");
+		return (1);
 	}
-	if (numbers - signs != 1)
+	else
+	{
+		printf("%d\n", a[0]);
 		return (0);
-	return (1);
+	}
 }
 
 int		main(int ac, char **av)
 {
+	int		ret;
+
+	ret = 0;
 	if (ac == 2)
-	{	
-		if (valid(av[1]))
-			rpn_calc(av[1]);
-		else
-			write(1, "Error\n", 6);
+	{
+		ret = rpn_calc(av[1]);
 	}
 	else
-		write(1, "Error\n", 6);
+		printf("Error\n");
 	return (0);
 }
