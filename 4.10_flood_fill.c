@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/03 10:41:24 by exam              #+#    #+#             */
-/*   Updated: 2019/10/21 22:04:15 by lusanche         ###   ########.fr       */
+/*   Created: 2019/10/22 10:20:56 by exam              #+#    #+#             */
+/*   Updated: 2019/11/26 07:33:11 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,44 +19,47 @@ typedef struct  s_point
     int           y;
 }               t_point;
 
-void	fill(char **tab, t_point size, t_point curr, char target)
+void	fill(char **tab, t_point size, t_point vector, char c)
 {
-	if (tab[curr.y][curr.x] == target)
+	if (c == tab[vector.y][vector.x])
 	{
-		tab[curr.y][curr.x] = 'F';
-		if (curr.x != (size.x - 1))
+		tab[vector.y][vector.x] = 'F';
+		if (vector.x < size.x - 1)
 		{
-			curr.x = curr.x + 1;
-			fill(tab, size, curr, target);
-			curr.x = curr.x - 1;
+			++vector.x;
+			fill(tab, size, vector, c);
+			--vector.x;
 		}
-		if (curr.y != (size.y - 1))
+		if (vector.x > 0)
 		{
-			curr.y = curr.y + 1;
-			fill(tab, size, curr, target);
-			curr.y = curr.y - 1;
+			--vector.x;
+			fill(tab, size, vector, c);
+			++vector.x;
 		}
-		if (curr.x != 0)
+		if (vector.y < size.y - 1)
 		{
-			curr.x = curr.x - 1;
-			fill(tab, size, curr, target);
-			curr.x = curr.x + 1;
+			++vector.y;
+			fill(tab, size, vector, c);
+			--vector.y;
 		}
-		if (curr.y != 0)
+		if (vector.y > 0)
 		{
-			curr.y = curr.y - 1;
-			fill(tab, size, curr, target);
-			curr.y = curr.y + 1;
+			--vector.y;
+			fill(tab, size, vector, c);
+			++vector.y;
 		}
 	}
 }
 
 void  flood_fill(char **tab, t_point size, t_point begin)
 {
-	char	target;
-	
-	target = tab[begin.y][begin.x];
-	fill(tab, size, begin, target);
+	char	c;
+
+	if (begin.y < size.y && begin.x < size.x)
+	{
+		c = tab[begin.y] [begin.x];
+		fill(tab, size, begin, c);
+	}
 }
 
 char** make_area(char** zone, t_point size)

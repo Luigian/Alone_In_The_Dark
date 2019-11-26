@@ -3,46 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/22 20:59:23 by lusanche          #+#    #+#             */
-/*   Updated: 2019/07/22 21:00:56 by lusanche         ###   ########.fr       */
+/*   Created: 2019/11/12 09:55:31 by exam              #+#    #+#             */
+/*   Updated: 2019/11/12 10:15:01 by exam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int		*ft_range(int start, int end)
+int     *ft_range(int start, int end)
 {
-	int		*a;
-	int		*beg;
-	int		adv;
+	int		dir;
 	int		len;
-
-	adv = 0;
-	len = 0;
+	int		*arr;
+	int		i;
+	
+	len = 1;
+	dir = 0;
 	if (start > end)
 	{
-		len = (start - end);
-		adv = -1;
+		len += start - end;
+		dir = -1;
 	}
-	else if (start < end)
+	else if (end > start)
 	{
-		len = (end - start);
-		adv = 1;
+		len += end - start;
+		dir = 1;
 	}
-	++len;
-	if (!(a = (int *)malloc(sizeof(int) * len)))
-		return (0);
-	beg = a;
+	arr = (int *)malloc(sizeof(int) * len);
+	i = 0;
 	while (len--)
 	{
-		*a = start;
-		start += adv;
-		++a;
+		arr[i] = start;
+		start += dir;
+		++i;
 	}
-	return (beg);
+	return (arr);
 }
 
 int		main(void)
@@ -57,4 +55,3 @@ int		main(void)
 	printf("%d\n", nums[4]);
 	return (0);
 }
-

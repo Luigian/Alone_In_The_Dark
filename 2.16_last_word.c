@@ -1,37 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_z.c                                            :+:      :+:    :+:   */
+/*   last_word.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 09:01:36 by exam              #+#    #+#             */
-/*   Updated: 2019/11/05 09:07:13 by exam             ###   ########.fr       */
+/*   Created: 2019/11/12 09:24:03 by exam              #+#    #+#             */
+/*   Updated: 2019/11/12 09:49:47 by exam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		aff_z(char *s)
+int		is_lastword(char *s)
+{
+	while (*s && (*s != ' ' && *s != '\t'))
+		++s;
+	while (*s == ' ' || *s == '\t')
+			++s;
+	if (*s == '\0')
+		return (1);
+	return (0);
+}
+
+int		last_word(char *s)
 {
 	while (*s)
 	{
-		if (*s == 'z')
+		while (*s == ' ' || *s == '\t')
+			++s;
+		if (*s == '\0')
+			return (0);
+		else if (is_lastword(s))
 		{
-			write(1, "z\n", 2);
+			while (*s && (*s != ' ' && *s != '\t'))
+			{
+				write(1, s, 1);
+				++s;
+			}
 			return (0);
 		}
-		++s;
+		else
+		{
+			while (*s && (*s != ' ' && *s != '\t'))
+				++s;
+		}
 	}
-	write(1, "z\n", 2);
 	return (0);
 }
 
 int		main(int ac, char **av)
 {
 	if (ac == 2)
-		aff_z(av[1]);
-	else
-		write(1, "z\n", 2);
+		last_word(av[1]);
+	write(1, "\n", 1);
 	return (0);
 }
