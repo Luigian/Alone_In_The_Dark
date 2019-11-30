@@ -26,13 +26,11 @@ This is a collection of the exercises that I have faced so far in the "C Exam Al
 * Rigor.
 * Algorithms & AI.
 
-### Compilation:
+### Installation:
 
 (All exercises in this collection include a main, even those that are not required by the subject for the purpose of the exam).
 
-`gcc -Wall -Wextra -Werror "file_exercise"` | For exercises that do not use a header.
-
-`gcc -Wall -Wextra -Werror "file_exercise" -I "file_header"` | For exercises that include a header.
+`gcc -Wall -Wextra -Werror "file_exercise"` | Compiles and creates the `a.out` file.
 
 ### Execution:
 
