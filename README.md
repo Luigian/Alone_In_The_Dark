@@ -1,4 +1,4 @@
-![](resources/images/calone_banner.png)
+![](images/calone_banner.png)
 
 # C Exam Alone In The Dark
 
