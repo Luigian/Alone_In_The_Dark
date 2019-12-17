@@ -31,7 +31,7 @@ This is a collection of the exercises that I have faced so far in the "C Exam Al
 
 ### Installation:
 
-(All exercises in this collection include a main, even those that are not required by the subject for the purpose of the exam).
+(All exercises in this collection include a main, even those that are not required by the subject for the purpose of the exam. Some lines may need to be uncommented).
 
 `gcc -Wall -Wextra -Werror "file_exercise"` | Compiles and creates the `a.out` file.
 
