@@ -1,6 +1,6 @@
 ![](images/calone_banner.png)
 
-# C Exam Alone In The Dark
+# C Exam Alone In The Dark - Beginner and Intermediate
 
 This is a collection of the exercises that I have faced so far in the "C Exam Alone In The Dark", "Beginner" and "Intermediate", of 42 School. These exams allowed me to check my achievements when i was alone in front of the computer, without peers and without internet. To validate "Beginners" (which is a prerequisite for "Intermediate" level), i must validate 5 exams with a minimum score of 75, which  means be able to succed on exercises of level 4. To validate "Intermediate" level, i must validate 5 exams with a minimum score of 85.
 
@@ -31,12 +31,12 @@ This is a collection of the exercises that I have faced so far in the "C Exam Al
 
 ### Installation:
 
-(All exercises in this collection include a main, even those that are not required by the subject for the purpose of the exam).
+(All exercises in this collection include a main, even those that are not required by the subject for the purpose of the exam. Some lines may need to be uncommented).
 
 `gcc -Wall -Wextra -Werror "file_exercise"` | Compiles and creates the `a.out` file.
 
 ### Execution:
 
-`./a.out` | For exercises with arguments supplied from inside the program.
+`./a.out` | For exercises that not expects command-line arguments.
 
 `./a.out "string_1" "string_2" "string_3"` | For exercises that expects command-line arguments.
