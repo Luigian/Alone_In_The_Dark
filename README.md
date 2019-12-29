@@ -1,14 +1,14 @@
-![](images/calone_banner.png)
+![](resources/images/calone_banner.png)
 
 # C Exam Alone In The Dark - Beginner and Intermediate
 
 This is a collection of the exercises that I have faced so far in the "C Exam Alone In The Dark", "Beginner" and "Intermediate", of 42 School. These exams allowed me to check my achievements when i was alone in front of the computer, without peers and without internet. To validate "Beginners" (which is a prerequisite for "Intermediate" level), i must validate 5 exams with a minimum score of 75, which  means be able to succed on exercises of level 4. To validate "Intermediate" level, i must validate 5 exams with a minimum score of 85.
 
 ### My Beginner exams record up to date:
-![](images/calone_beg_record.png)
+![](resources/images/calone_beg_record.png)
 
 ### My Intermediate exams record up to date:
-![](images/calone_int_record.png)
+![](resources/images/calone_int_record.png)
 
 ### Key points:
 
@@ -37,6 +37,6 @@ This is a collection of the exercises that I have faced so far in the "C Exam Al
 
 ### Execution:
 
-`./a.out` | For exercises that not expects command-line arguments.
+`./a.out` | For exercises that doesn't expects command-line arguments.
 
-`./a.out "string_1" "string_2" "string_3"` | For exercises that expects command-line arguments.
+`./a.out [argument string 1] [argument string 2] [argument string 3]` | For exercises that expects command-line arguments.
