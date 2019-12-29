@@ -37,6 +37,6 @@ This is a collection of the exercises that I have faced so far in the "C Exam Al
 
 ### Execution:
 
-`./a.out` | For exercises that not expects command-line arguments.
+`./a.out` | For exercises that doesn't expects command-line arguments.
 
 `./a.out [argument string 1] [argument string 2] [argument string 3]` | For exercises that expects command-line arguments.
