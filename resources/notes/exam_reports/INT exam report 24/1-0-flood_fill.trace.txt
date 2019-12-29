@@ -1,0 +1,109 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z2r5p28.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Dec 17 10:25:50 PST 2019
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-intermediate/exam_20191217/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/z8/m7l78r3d7l94b768prv0kn9m0000gp/T/tmp4fFUAh/user log --pretty='%H - %an, %ad : %s'
+4201ee27404cc6d5989cbc7cf53feb1627e7b25e - Exam 42, Tue Dec 17 10:25:19 2019 -0800 : flood_fill
+47b289b1e8c433fef77f7ef1607afcf528115a49 - Exam 42, Tue Dec 17 09:16:19 2019 -0800 : is_anagram
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/z8/m7l78r3d7l94b768prv0kn9m0000gp/T/tmp4fFUAh/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  563 Dec 17 10:25 __GIT_HISTORY
+drwxr-xr-x  4 deepthought  deepthought  136 Dec 17 10:25 flood_fill
+drwxr-xr-x  3 deepthought  deepthought  102 Dec 17 10:25 is_anagram
+
+/var/folders/z8/m7l78r3d7l94b768prv0kn9m0000gp/T/tmp4fFUAh/user/flood_fill:
+total 16
+-rw-r--r--  1 deepthought  deepthought  1015 Dec 17 10:25 flood.h
+-rw-r--r--  1 deepthought  deepthought  1735 Dec 17 10:25 flood_fill.c
+
+/var/folders/z8/m7l78r3d7l94b768prv0kn9m0000gp/T/tmp4fFUAh/user/is_anagram:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1391 Dec 17 10:25 is_anagram.c
+ 
+= flood_fill ===================================================================
+$> gcc -Wextra -Wall -Werror flood_fill.c main.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./jphrwsj1j1moyvdngbej66e5 test1
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./tffm496vpx5j1y546fhdi745 test2
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./jhyekdubymdashqngrmftweq test3
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./hfl5ly94i4z3wpgfq80rt1id test4
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./4lms0woukvxled1zv0gzxyie test5
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./dkjny9va6fhppv9zwz9i3cau test6
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./jf6xzux15stupocv67c0wqpc test7
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./iouzvufjfv7sk21vpip1ejw5 test8
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./8163mbwvflrorsdm523u2f1u test9
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./j4kbs7xpjx3jl3ec9p1z9nq3 test10
+$> diff -U 3 user_output_test10 test10.output | cat -e
+
+Diff OK :D
+= Test 11 ==================================================
+$> ./ottvydca1zfls7dbtm7nkcd6 test11
+$> diff -U 3 user_output_test11 test11.output | cat -e
+
+Diff OK :D
+= Test 12 ==================================================
+$> ./7w4rvt8rjsfcpc2wh3rhm9so test12
+$> diff -U 3 user_output_test12 test12.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

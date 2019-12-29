@@ -1,0 +1,105 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z2r9p25.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Jul 23 10:29:08 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190723/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/fl/1w61p8rd5tb4j3k6z9dfnbt00000gp/T/tmpD8NwQN/user log --pretty='%H - %an, %ad : %s'
+6f0f2579ca47d01a810d35c1f49238778732d7fc - Exam 42, Tue Jul 23 10:28:56 2019 -0700 : is_power_of_2
+7de4c94f09f93ae0f782add16b0defdf0066f9c7 - Exam 42, Tue Jul 23 10:14:47 2019 -0700 : max
+0f18aae524ef4f35d26320a1a342e164ccb8e79c - Exam 42, Tue Jul 23 09:18:35 2019 -0700 : ulstr
+a1425d5755e22dc38a4a962daecd5e902ac14bba - Exam 42, Tue Jul 23 09:09:13 2019 -0700 : hello
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/fl/1w61p8rd5tb4j3k6z9dfnbt00000gp/T/tmpD8NwQN/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  911 Jul 23 10:29 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Jul 23 10:29 hello
+drwxr-xr-x  3 deepthought  deepthought  102 Jul 23 10:29 is_power_of_2
+drwxr-xr-x  3 deepthought  deepthought  102 Jul 23 10:29 max
+drwxr-xr-x  3 deepthought  deepthought  102 Jul 23 10:29 ulstr
+
+/var/folders/fl/1w61p8rd5tb4j3k6z9dfnbt00000gp/T/tmpD8NwQN/user/hello:
+total 8
+-rw-r--r--  1 deepthought  deepthought  979 Jul 23 10:29 hello.c
+
+/var/folders/fl/1w61p8rd5tb4j3k6z9dfnbt00000gp/T/tmpD8NwQN/user/is_power_of_2:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1038 Jul 23 10:29 is_power_of_2.c
+
+/var/folders/fl/1w61p8rd5tb4j3k6z9dfnbt00000gp/T/tmpD8NwQN/user/max:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1267 Jul 23 10:29 max.c
+
+/var/folders/fl/1w61p8rd5tb4j3k6z9dfnbt00000gp/T/tmpD8NwQN/user/ulstr:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1200 Jul 23 10:29 ulstr.c
+ 
+= is_power_of_2 ================================================================
+$> gcc -Wextra -Wall -Werror is_power_of_2.c main.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./f20cviroqd90vzi6ennsr24x 0
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./anwhhziqs627o9yuvvp6ihxy 1
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./ml7k69vafk5kt1xgb14212fb 2
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./7swxr8cle0byafwti5ydlrzk 3
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./jnj7c87skxv1spduuhzlpy3f 4
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./ywx2v6qpod4t3h96atpr6s1y 1234
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./pf9uqq21j8ut3eyy994lv5kd 2147483646
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./qoxfao83rhcobxwo9wuflgts 2147483648
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./bqdlnyql4jiawsv4vh4xrzxs 4294967295
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

@@ -1,0 +1,142 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z2r9p43.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Oct 15 12:53:07 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20191015/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/15/cdz3bmds76vb50hbnsvz5dfm0000gp/T/tmpYqBXY4/user log --pretty='%H - %an, %ad : %s'
+aa541fe5ed374efee93c950a5dfb8788b319d509 - Exam 42, Tue Oct 15 12:52:34 2019 -0700 : rpn_calc
+6d8f30a04c34cb5c4ca4ac88c8c409c68fc4df22 - Exam 42, Tue Oct 15 10:46:31 2019 -0700 : sort_int_tab
+8c62c9642c788ce056fc1aad70d1197c77c4c474 - Exam 42, Tue Oct 15 10:17:15 2019 -0700 : ft_rrange
+53bb6eddae49bf1efcf5bd26e172cd343f59409f - Exam 42, Tue Oct 15 09:37:57 2019 -0700 : ft_atoi
+ea065e29cf31fcd9cbf5adb6b821a8ad653b5f49 - Exam 42, Tue Oct 15 09:18:38 2019 -0700 : ft_strcpy
+d115f79e41d55809b6a90f006f09a2134027bae5 - Exam 42, Tue Oct 15 09:07:37 2019 -0700 : only_a
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/15/cdz3bmds76vb50hbnsvz5dfm0000gp/T/tmpYqBXY4/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1443 Oct 15 12:53 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 15 12:53 ft_atoi
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 15 12:53 ft_rrange
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 15 12:53 ft_strcpy
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 15 12:53 only_a
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 15 12:53 rpn_calc
+drwxr-xr-x  3 deepthought  deepthought   102 Oct 15 12:53 sort_int_tab
+
+/var/folders/15/cdz3bmds76vb50hbnsvz5dfm0000gp/T/tmpYqBXY4/user/ft_atoi:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1293 Oct 15 12:53 ft_atoi.c
+
+/var/folders/15/cdz3bmds76vb50hbnsvz5dfm0000gp/T/tmpYqBXY4/user/ft_rrange:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1280 Oct 15 12:53 ft_rrange.c
+
+/var/folders/15/cdz3bmds76vb50hbnsvz5dfm0000gp/T/tmpYqBXY4/user/ft_strcpy:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1035 Oct 15 12:53 ft_strcpy.c
+
+/var/folders/15/cdz3bmds76vb50hbnsvz5dfm0000gp/T/tmpYqBXY4/user/only_a:
+total 8
+-rw-r--r--  1 deepthought  deepthought  965 Oct 15 12:53 only_a.c
+
+/var/folders/15/cdz3bmds76vb50hbnsvz5dfm0000gp/T/tmpYqBXY4/user/rpn_calc:
+total 8
+-rw-r--r--  1 deepthought  deepthought  2143 Oct 15 12:53 rpn_calc.c
+
+/var/folders/15/cdz3bmds76vb50hbnsvz5dfm0000gp/T/tmpYqBXY4/user/sort_int_tab:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1264 Oct 15 12:53 sort_int_tab.c
+ 
+= rpn_calc =====================================================================
+$> gcc -Wextra -Wall -Werror rpn_calc.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./34vfxy985ywtp5zfyk677gzd 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./ygo9cyhskxd39cqloqv60xm4 "2 3 -" "5 6 +"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./s57tf5pfdqrg5tf4ro2x3nqc "2 -"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./xka51nzxmsc5bli2hegt92wg "-"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./hgj6bmh844oopkouuzufnn6v "2 5 6 -"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./k0o092bngkbwmyextd0q78g2 "3 4 +"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./akppkctb8gbfrdc86ynnhd0k "2 4 + 8 *"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./20qwrx50gmeki9ikf1t2ddtl "50 10 25 + -"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./7oilifsb788r87s79erljssj "1000 5 2 * /"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./uvqxt8amq6l9c0a24etz3cwj "1000 3 %"
+$> diff -U 3 user_output_test10 test10.output | cat -e
+
+Diff OK :D
+= Test 11 ==================================================
+$> ./1if4m426otridd7iax58pjho "1000 0 /"
+$> diff -U 3 user_output_test11 test11.output | cat -e
+
+Diff OK :D
+= Test 12 ==================================================
+$> ./5wd1tqrmr7x2fh3z7h0njazi "1000 0 %"
+$> diff -U 3 user_output_test12 test12.output | cat -e
+
+Diff OK :D
+= Test 13 ==================================================
+$> ./tfqw3en1oigs2sz74 "
+$> diff -U 3 user_output_test13 test13.output | cat -e
+--- user_output_test13	2019-10-15 12:53:10.000000000 -0700$
++++ test13.output	2019-10-15 12:53:10.000000000 -0700$
+@@ -1 +1 @@$
+-Error$
++1000$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================

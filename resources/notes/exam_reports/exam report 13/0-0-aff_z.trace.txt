@@ -1,0 +1,72 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z3r7p7.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Aug  6 09:05:47 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190806/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/kz/nb1gnzb13wn_10wmwjl_46700000gp/T/tmpiPmmUN/user log --pretty='%H - %an, %ad : %s'
+675d87430bbc4625cf756afd43b61898d6869717 - Exam 42, Tue Aug 6 09:05:05 2019 -0700 : aff_z
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/kz/nb1gnzb13wn_10wmwjl_46700000gp/T/tmpiPmmUN/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  210 Aug  6 09:05 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Aug  6 09:05 aff_z
+
+/var/folders/kz/nb1gnzb13wn_10wmwjl_46700000gp/T/tmpiPmmUN/user/aff_z:
+total 8
+-rw-r--r--  1 deepthought  deepthought  966 Aug  6 09:05 aff_z.c
+ 
+= aff_z ========================================================================
+$> gcc -Wextra -Wall -Werror aff_z.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./tilggkboxm5t9c2ln5pl1xni 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./efsn3tg6se45gxt61nhe1ufv "ylCw3Mx" "ctPV7" "ulwimXgh8MQ1KD" "7Q1TVqa" "lOvZ5DonUjx6s0Y" "8QTZNti4Rmn6qH7FV" "0Upk51Wl8gXaKZtSy" "VHmuQW8gTM" "ltAHceqUYW" "M6FwdLIg5W9eyrVk8" "VIgnKLF9YkmUC" "9giTpJOZP70yNRhY" "GrWo9uMEQ2FmzCh" "FNrd7Qns" "FV9E"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./3o8eoq1wcdkq04xal6ojfys6 "eyz6CHK4MI"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./oi2x4ogqz29umt2punc7qil8 "jMqALtuNiozcy"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./gl0t2hr1ptvuziq24p6gac2b "mg36cxWsRu9TyjS"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./ebqjea00g7bmhfxw1rh91i1q "W4qGlA5Y63ef8QPg"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

@@ -1,0 +1,69 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z3r3p7.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Jul 16 12:51:54 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190716/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/hm/hz2ybxb5229fnzgs59g851f80000gp/T/tmp7qcTjP/user log --pretty='%H - %an, %ad : %s'
+90fcb933fef20a19ef8c25d90137b468880f7131 - Exam 42, Tue Jul 16 12:51:46 2019 -0700 : ft_list_remove_if
+c61809190e687035670d4d4e6ab3c7391d6f90d0 - Exam 42, Tue Jul 16 10:02:30 2019 -0700 : ft_range
+6232cfaa2c4c960c1293da5e4e4e7d676c1a63dc - Exam 42, Tue Jul 16 09:37:39 2019 -0700 : print_bits
+ed65062337cc385b16a4a89a5f2650dc62c072fe - Exam 42, Tue Jul 16 09:24:30 2019 -0700 : ft_strcpy
+0f05f2b156662efeff36dd3b856e37116c48efb0 - Exam 42, Tue Jul 16 09:11:01 2019 -0700 : aff_a
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/hm/hz2ybxb5229fnzgs59g851f80000gp/T/tmp7qcTjP/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1206 Jul 16 12:51 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Jul 16 12:51 aff_a
+drwxr-xr-x  3 deepthought  deepthought   102 Jul 16 12:51 ft_list_remove_if
+drwxr-xr-x  3 deepthought  deepthought   102 Jul 16 12:51 ft_range
+drwxr-xr-x  3 deepthought  deepthought   102 Jul 16 12:51 ft_strcpy
+drwxr-xr-x  3 deepthought  deepthought   102 Jul 16 12:51 print_bits
+
+/var/folders/hm/hz2ybxb5229fnzgs59g851f80000gp/T/tmp7qcTjP/user/aff_a:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1159 Jul 16 12:51 aff_a.c
+
+/var/folders/hm/hz2ybxb5229fnzgs59g851f80000gp/T/tmp7qcTjP/user/ft_list_remove_if:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1447 Jul 16 12:51 ft_list_remove_if.c
+
+/var/folders/hm/hz2ybxb5229fnzgs59g851f80000gp/T/tmp7qcTjP/user/ft_range:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1290 Jul 16 12:51 ft_range.c
+
+/var/folders/hm/hz2ybxb5229fnzgs59g851f80000gp/T/tmp7qcTjP/user/ft_strcpy:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1031 Jul 16 12:51 ft_strcpy.c
+
+/var/folders/hm/hz2ybxb5229fnzgs59g851f80000gp/T/tmp7qcTjP/user/print_bits:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1064 Jul 16 12:51 print_bits.c
+ 
+= ft_list_remove_if ============================================================
+$> gcc -Wextra -Wall -Werror ft_list_remove_if.c ft_create_elem.c main.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./m5ecmapqurbw22np93fn1uxe 
+Command './m5ecmapqurbw22np93fn1uxe ' got killed by a Segmentation fault (Signal -11)
+Grade: 0
+
+= Final grade: 0 ===============================================================

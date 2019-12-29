@@ -1,0 +1,160 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z3r7p15.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue May 28 11:10:21 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190528/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/f0/_nv4jgkn2r91myfhrxb7q8cc0000gp/T/tmp3rlfYw/user log --pretty='%H - %an, %ad : %s'
+12caead4dd7205fcb0e87eeeea0fc85abb438757 - Exam 42, Tue May 28 11:09:58 2019 -0700 : creation of ft_range
+01e528daa4b1c2aa7e91ab971553941668695153 - Exam 42, Tue May 28 09:50:00 2019 -0700 : creation of alpha_mirror
+2e5286a6a43b242481f978e7dba6c0bfafdaf994 - Exam 42, Tue May 28 09:14:27 2019 -0700 : creation of ft_strlen
+d3a278125a3870b529fe53a859cefb1ee024a223 - Exam 42, Tue May 28 09:07:48 2019 -0700 : creation of ft_countdown
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/f0/_nv4jgkn2r91myfhrxb7q8cc0000gp/T/tmp3rlfYw/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1017 May 28 11:10 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 May 28 11:10 alpha_mirror
+drwxr-xr-x  3 deepthought  deepthought   102 May 28 11:10 ft_countdown
+drwxr-xr-x  3 deepthought  deepthought   102 May 28 11:10 ft_range
+drwxr-xr-x  3 deepthought  deepthought   102 May 28 11:10 ft_strlen
+
+/var/folders/f0/_nv4jgkn2r91myfhrxb7q8cc0000gp/T/tmp3rlfYw/user/alpha_mirror:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1246 May 28 11:10 alpha_mirror.c
+
+/var/folders/f0/_nv4jgkn2r91myfhrxb7q8cc0000gp/T/tmp3rlfYw/user/ft_countdown:
+total 8
+-rw-r--r--  1 deepthought  deepthought  977 May 28 11:10 ft_countdown.c
+
+/var/folders/f0/_nv4jgkn2r91myfhrxb7q8cc0000gp/T/tmp3rlfYw/user/ft_range:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1478 May 28 11:10 ft_range.c
+
+/var/folders/f0/_nv4jgkn2r91myfhrxb7q8cc0000gp/T/tmp3rlfYw/user/ft_strlen:
+total 8
+-rw-r--r--  1 deepthought  deepthought  997 May 28 11:10 ft_strlen.c
+ 
+= ft_range =====================================================================
+$> gcc -Wextra -Wall -Werror main.c ft_range.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./ua6vaas44yfd61fy5ts7xba4 
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./e4zesyxafbwaou44qif6uvzw "21" "2313" "12"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./xw4c4f1w109p6bpn5wpfzev2 "2147483647" "2147483640" "7"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./ba83611o4clgz5ki6m2hc8yh "-2147483648" "-2147483600" "48"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./cgyot8nyuyjrhdgtjc0bu6m6 "0" "0" "1"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./q4aszxvfcf5koyqjwgebclsm "1741972844" "1741972814" "31"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./m2ldsd71qy7skvlkb3ryi8ss "1357313951" "1357313969" "19"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./94ng6bm7txzke0h4cqly6smc "719474120" "719474128" "9"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./2atrx25ys56dug1mnu7kfk66 "705056501" "705056463" "39"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./wo12xzcq77p56cgbkwdmutyw "-167604358" "-167604352" "7"
+$> diff -U 3 user_output_test10 test10.output | cat -e
+
+Diff OK :D
+= Test 11 ==================================================
+$> ./3mwpgqnnu353mjsfsblrixic "1774838380" "1774838357" "24"
+$> diff -U 3 user_output_test11 test11.output | cat -e
+
+Diff OK :D
+= Test 12 ==================================================
+$> ./swqvxbe6mnc0zkasoxvyaigx "356263190" "356263185" "6"
+$> diff -U 3 user_output_test12 test12.output | cat -e
+
+Diff OK :D
+= Test 13 ==================================================
+$> ./llw1k4ngnmepu30jc94lxd06 "109510570" "109510545" "26"
+$> diff -U 3 user_output_test13 test13.output | cat -e
+
+Diff OK :D
+= Test 14 ==================================================
+$> ./a9v99mj0on8a5hrwfurysq4u "899913272" "899913225" "48"
+$> diff -U 3 user_output_test14 test14.output | cat -e
+
+Diff OK :D
+= Test 15 ==================================================
+$> ./km88brt6bd7o50w3o8svd19a "274709367" "274709416" "50"
+$> diff -U 3 user_output_test15 test15.output | cat -e
+
+Diff OK :D
+= Test 16 ==================================================
+$> ./xdyclofacxuusbv22vp7zcsb "6541143" "6541111" "33"
+$> diff -U 3 user_output_test16 test16.output | cat -e
+
+Diff OK :D
+= Test 17 ==================================================
+$> ./3ffttjdxmhvcei8ks098gfwm "856165944" "856165990" "47"
+$> diff -U 3 user_output_test17 test17.output | cat -e
+
+Diff OK :D
+= Test 18 ==================================================
+$> ./spxf9hngzl5mt1tca9mqefib "93512516" "93512553" "38"
+$> diff -U 3 user_output_test18 test18.output | cat -e
+
+Diff OK :D
+= Test 19 ==================================================
+$> ./fsre7kut3ny57ilzml3u83b1 "600517728" "600517694" "35"
+$> diff -U 3 user_output_test19 test19.output | cat -e
+
+Diff OK :D
+= Test 20 ==================================================
+$> ./gtukm6uogbiaicp843jbzbzn "1820420045" "1820420049" "5"
+$> diff -U 3 user_output_test20 test20.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

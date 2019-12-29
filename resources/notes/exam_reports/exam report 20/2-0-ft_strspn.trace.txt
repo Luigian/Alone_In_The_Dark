@@ -1,0 +1,59 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z3r1p19.42.us.org
+Darwin 17.5.0 x86_64
+$> date
+Tue Nov  5 09:41:06 PST 2019
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20191105/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/ht/sjd_vr3n4czf686gqdzn6w180000gp/T/tmpbU3ozk/user log --pretty='%H - %an, %ad : %s'
+a398b6be82a74fe59db8600a21a17ffc67b1e38e - Exam 42, Tue Nov 5 09:40:38 2019 -0800 : ft_strspn
+e5b95609304abdd92c891d4190850a4b58aae48d - Exam 42, Tue Nov 5 09:22:06 2019 -0800 : search_and_replace
+b819d4187ad13d31de1cc8ec2101c2be78f97066 - Exam 42, Tue Nov 5 09:09:01 2019 -0800 : aff_z
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/ht/sjd_vr3n4czf686gqdzn6w180000gp/T/tmpbU3ozk/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  733 Nov  5 09:41 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Nov  5 09:41 aff_z
+drwxr-xr-x  3 deepthought  deepthought  102 Nov  5 09:41 ft_strspn
+drwxr-xr-x  3 deepthought  deepthought  102 Nov  5 09:41 search_and_replace
+
+/var/folders/ht/sjd_vr3n4czf686gqdzn6w180000gp/T/tmpbU3ozk/user/aff_z:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1164 Nov  5 09:41 aff_z.c
+
+/var/folders/ht/sjd_vr3n4czf686gqdzn6w180000gp/T/tmpbU3ozk/user/ft_strspn:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1165 Nov  5 09:41 ft_strspn.c
+
+/var/folders/ht/sjd_vr3n4czf686gqdzn6w180000gp/T/tmpbU3ozk/user/search_and_replace:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1238 Nov  5 09:41 search_and_replace.c
+ 
+= ft_strspn ====================================================================
+$> gcc -Wextra -Wall -Werror main.c ft_strspn.c -o user_exe 
+ft_strspn.c:24:1: error: unknown type name 'size_t'
+size_t  ft_strspn(const char *s, const char *accept)
+^
+1 error generated.
+
+Could not compile 'user_exe'
+Grade: 0
+
+= Final grade: 0 ===============================================================

@@ -1,0 +1,71 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z1r6p6.42.us.org
+Darwin 17.5.0 x86_64
+$> date
+Tue Jul  9 11:12:47 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190709/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/yw/p_tn1tsd2_3gnrk_hnqhr0h40000gp/T/tmpAyP2zC/user log --pretty='%H - %an, %ad : %s'
+7db392a6877bdb1d47cca9658fe4ca88803d6505 - Exam 42, Tue Jul 9 11:12:31 2019 -0700 : sort_int_tab
+ef7d0c84f0b1e2f95f0ccf06b7c2d72483394df6 - Exam 42, Tue Jul 9 10:51:20 2019 -0700 : lcm
+76fd036661b50393a358961754e19ad68f6a9485 - Exam 42, Tue Jul 9 10:21:52 2019 -0700 : swap_bits
+9820567d4fa08586f7c806a06f22ac447c4daaa6 - Exam 42, Tue Jul 9 09:21:34 2019 -0700 : repeat_alpha
+5b0ba6ad89950204f55f244336fc443010bd016e - Exam 42, Tue Jul 9 09:06:35 2019 -0700 : hello
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/yw/p_tn1tsd2_3gnrk_hnqhr0h40000gp/T/tmpAyP2zC/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1179 Jul  9 11:12 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Jul  9 11:12 hello
+drwxr-xr-x  3 deepthought  deepthought   102 Jul  9 11:12 lcm
+drwxr-xr-x  3 deepthought  deepthought   102 Jul  9 11:12 repeat_alpha
+drwxr-xr-x  3 deepthought  deepthought   102 Jul  9 11:12 sort_int_tab
+drwxr-xr-x  3 deepthought  deepthought   102 Jul  9 11:12 swap_bits
+
+/var/folders/yw/p_tn1tsd2_3gnrk_hnqhr0h40000gp/T/tmpAyP2zC/user/hello:
+total 8
+-rw-r--r--  1 deepthought  deepthought  979 Jul  9 11:12 hello.c
+
+/var/folders/yw/p_tn1tsd2_3gnrk_hnqhr0h40000gp/T/tmpAyP2zC/user/lcm:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1174 Jul  9 11:12 lcm.c
+
+/var/folders/yw/p_tn1tsd2_3gnrk_hnqhr0h40000gp/T/tmpAyP2zC/user/repeat_alpha:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1262 Jul  9 11:12 repeat_alpha.c
+
+/var/folders/yw/p_tn1tsd2_3gnrk_hnqhr0h40000gp/T/tmpAyP2zC/user/sort_int_tab:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1216 Jul  9 11:12 sort_int_tab.c
+
+/var/folders/yw/p_tn1tsd2_3gnrk_hnqhr0h40000gp/T/tmpAyP2zC/user/swap_bits:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1223 Jul  9 11:12 swap_bits.c
+ 
+= sort_int_tab =================================================================
+$> gcc -Wextra -Wall -Werror main.c sort_int_tab.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./s5c2860co7ide4ezyhsr0om6
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

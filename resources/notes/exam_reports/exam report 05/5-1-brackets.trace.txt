@@ -1,0 +1,121 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z3r2p2.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Jun  4 12:58:26 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190604/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/hn/nj4qhglx7515hx47kdqncg6h0000gp/T/tmp90UoQZ/user log --pretty='%H - %an, %ad : %s'
+a7a745d5fc40498ceba460e9824de07c161e24e6 - Exam 42, Tue Jun 4 12:58:16 2019 -0700 : brackets advances
+3a4e00548fd99d96d5dec2c77e660f6b119d5f0e - Exam 42, Tue Jun 4 11:33:16 2019 -0700 : ft_list_foreach
+fb254b1bace1d564b36160aca01082744daac17c - Exam 42, Tue Jun 4 10:37:20 2019 -0700 : expand_str
+a3fdbb0fca0583e37b40a38c1b898673ae55445f - Exam 42, Tue Jun 4 10:16:03 2019 -0700 : union
+ba4ec9eb914a3ea6af19d52fd3917392d5d418e7 - Exam 42, Tue Jun 4 09:17:52 2019 -0700 : ft_swap
+67a306807fd3aa0317c38a2d01400fa9c3e13cc2 - Exam 42, Tue Jun 4 09:08:12 2019 -0700 : maff_revalpha
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/hn/nj4qhglx7515hx47kdqncg6h0000gp/T/tmp90UoQZ/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1529 Jun  4 12:58 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Jun  4 12:58 brackets
+drwxr-xr-x  3 deepthought  deepthought   102 Jun  4 12:58 expand_str
+drwxr-xr-x  4 deepthought  deepthought   136 Jun  4 12:58 ft_list_foreach
+drwxr-xr-x  3 deepthought  deepthought   102 Jun  4 12:58 ft_swap
+drwxr-xr-x  3 deepthought  deepthought   102 Jun  4 12:58 maff_revalpha
+drwxr-xr-x  3 deepthought  deepthought   102 Jun  4 12:58 union
+
+/var/folders/hn/nj4qhglx7515hx47kdqncg6h0000gp/T/tmp90UoQZ/user/brackets:
+total 8
+-rw-r--r--  1 deepthought  deepthought  2084 Jun  4 12:58 brackets.c
+
+/var/folders/hn/nj4qhglx7515hx47kdqncg6h0000gp/T/tmp90UoQZ/user/expand_str:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1264 Jun  4 12:58 expand_str.c
+
+/var/folders/hn/nj4qhglx7515hx47kdqncg6h0000gp/T/tmp90UoQZ/user/ft_list_foreach:
+total 16
+-rw-r--r--  1 deepthought  deepthought  1018 Jun  4 12:58 ft_list.h
+-rw-r--r--  1 deepthought  deepthought  1072 Jun  4 12:58 ft_list_foreach.c
+
+/var/folders/hn/nj4qhglx7515hx47kdqncg6h0000gp/T/tmp90UoQZ/user/ft_swap:
+total 8
+-rw-r--r--  1 deepthought  deepthought  972 Jun  4 12:58 ft_swap.c
+
+/var/folders/hn/nj4qhglx7515hx47kdqncg6h0000gp/T/tmp90UoQZ/user/maff_revalpha:
+total 8
+-rw-r--r--  1 deepthought  deepthought  993 Jun  4 12:58 maff_revalpha.c
+
+/var/folders/hn/nj4qhglx7515hx47kdqncg6h0000gp/T/tmp90UoQZ/user/union:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1576 Jun  4 12:58 union.c
+ 
+= brackets =====================================================================
+$> gcc -Wextra -Wall -Werror brackets.c -o user_exe 
+brackets.c:23:46: error: backslash and newline separated by space [-Werror,-Wbackslash-newline-escape]
+                if (*s == '(' || *s == '[' || *s == '{' ||\ 
+                                                           ^
+brackets.c:26:12: error: equality comparison result unused [-Werror,-Wunused-comparison]
+                        temp[i] == *s;
+                        ~~~~~~~~^~~~~
+brackets.c:26:12: note: use '=' to turn this equality comparison into an assignment
+                        temp[i] == *s;
+                                ^~
+                                =
+brackets.c:32:10: error: address of stack memory associated with local variable 'temp' returned [-Werror,-Wreturn-stack-address]
+        return (temp);
+                ^~~~
+brackets.c:58:6: error: implicit declaration of function 'result' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        if (result(i, s));
+            ^
+brackets.c:58:19: error: if statement has empty body [-Werror,-Wempty-body]
+        if (result(i, s));
+                         ^
+brackets.c:58:19: note: put the semicolon on a separate line to silence this warning
+brackets.c:60:2: error: expected expression
+        else 
+        ^
+brackets.c:66:9: error: use of undeclared identifier 'brack'; did you mean 'break'?
+        while (brack[i])
+               ^~~~~
+               break
+brackets.c:66:9: error: expected expression
+brackets.c:68:20: error: use of undeclared identifier 'brack'
+                if (is_closer(i, brack))
+                                 ^
+brackets.c:70:10: error: implicit declaration of function 'is_ok' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                        if (!(is_ok(i, brack)))
+                              ^
+brackets.c:70:19: error: use of undeclared identifier 'brack'
+                        if (!(is_ok(i, brack)))
+                                       ^
+brackets.c:64:26: error: unused parameter 's' [-Werror,-Wunused-parameter]
+int             result(int i, char *s)
+                                    ^
+brackets.c:93:1: error: extraneous closing brace ('}')
+}
+^
+brackets.c:106:4: error: cannot increment value of type 'void'
+                        ++i;
+                        ^
+14 errors generated.
+
+Could not compile 'user_exe'
+Grade: 0
+
+= Final grade: 0 ===============================================================

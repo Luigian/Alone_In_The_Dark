@@ -1,0 +1,123 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z1r7p36.42.us.org
+Darwin 17.5.0 x86_64
+$> date
+Tue Oct 15 09:19:14 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20191015/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/83/h7w13q3d2p7db8mf8gm5cy8w0000gp/T/tmpbyNz5T/user log --pretty='%H - %an, %ad : %s'
+ea065e29cf31fcd9cbf5adb6b821a8ad653b5f49 - Exam 42, Tue Oct 15 09:18:38 2019 -0700 : ft_strcpy
+d115f79e41d55809b6a90f006f09a2134027bae5 - Exam 42, Tue Oct 15 09:07:37 2019 -0700 : only_a
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/83/h7w13q3d2p7db8mf8gm5cy8w0000gp/T/tmpbyNz5T/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  445 Oct 15 09:19 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Oct 15 09:19 ft_strcpy
+drwxr-xr-x  3 deepthought  deepthought  102 Oct 15 09:19 only_a
+
+/var/folders/83/h7w13q3d2p7db8mf8gm5cy8w0000gp/T/tmpbyNz5T/user/ft_strcpy:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1035 Oct 15 09:19 ft_strcpy.c
+
+/var/folders/83/h7w13q3d2p7db8mf8gm5cy8w0000gp/T/tmpbyNz5T/user/only_a:
+total 8
+-rw-r--r--  1 deepthought  deepthought  965 Oct 15 09:19 only_a.c
+ 
+= ft_strcpy ====================================================================
+$> gcc -Wextra -Wall -Werror main.c ft_strcpy.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./3o20t0mhdsjy81hoyc1ejxjp ""
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./4vex8unxbqoxgksr3wslibg6 "z4VS"
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./83184sk60efia4ogbq02pws0 "WULvs8go62QiryY"
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./1dawvtkmgf63atg43zjmkxgx "ksL9o"
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./vxz5p5kxttbb8cfvb0mmjf53 "BKgH6lj9brkXU"
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./c65uuwdjc21gvvldncziwoj1 "XVYCxGuspQfd"
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./hu577zepuitljcquaf4ihd1y "prqtKjOea57oDc"
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./au05l5ekwvx8ffuyr518z0iq "kAO8XP7fRNY9"
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./ziogyxxjte9ctyonagr91vj9 "MQnY20VHSRZpjoTwf"
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./3w1dme9w5obeagertdlejyrm "IYSjF"
+$> diff -U 3 user_output_test10 test10.output | cat -e
+
+Diff OK :D
+= Test 11 ==================================================
+$> ./5jbvthot7fcvv1wteqwjaxbk "RvhDE2C1VLnO8x"
+$> diff -U 3 user_output_test11 test11.output | cat -e
+
+Diff OK :D
+= Test 12 ==================================================
+$> ./9fexmpbkakkq9muluar6pig1 "kEuj2Y9irKqc"
+$> diff -U 3 user_output_test12 test12.output | cat -e
+
+Diff OK :D
+= Test 13 ==================================================
+$> ./9subz9oo6t3w95pnqi1r7t57 "NiwApe"
+$> diff -U 3 user_output_test13 test13.output | cat -e
+
+Diff OK :D
+= Test 14 ==================================================
+$> ./t0aobhcmlmzdfxzlqdvydhtg "RDXex2sA"
+$> diff -U 3 user_output_test14 test14.output | cat -e
+
+Diff OK :D
+= Test 15 ==================================================
+$> ./busjl196m14ml82oj1ynde60 "F9s5euI3"
+$> diff -U 3 user_output_test15 test15.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

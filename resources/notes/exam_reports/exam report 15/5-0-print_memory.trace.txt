@@ -1,0 +1,78 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z1r6p22.42.us.org
+Darwin 17.5.0 x86_64
+$> date
+Tue Aug 20 11:48:59 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190820/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/d0/gr9wl6ps3bb8ky427pn7rb8h0000gp/T/tmpplLS4J/user log --pretty='%H - %an, %ad : %s'
+c044b42022c45ed77651673a47264c4fb44bb0e1 - Exam 42, Tue Aug 20 11:48:38 2019 -0700 : print_memory
+999925b0ec067a2421eb58d40be516d6b89f2300 - Exam 42, Tue Aug 20 11:23:06 2019 -0700 : ft_itoa
+9a0d479bdb8b4d582daa603e2fff73cbc91e1813 - Exam 42, Tue Aug 20 10:32:53 2019 -0700 : ft_list_size
+da7d00ad87e3e5c8deab41d5d822a8e0ba7b6171 - Exam 42, Tue Aug 20 09:45:16 2019 -0700 : inter
+4fa65d5fd8a480c9668928925471ce035422b94d - Exam 42, Tue Aug 20 09:23:33 2019 -0700 : first_word
+58d79ce90e1c2e6bbbd362ec8a0fb6c5a18d4d74 - Exam 42, Tue Aug 20 09:11:52 2019 -0700 : aff_a
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/d0/gr9wl6ps3bb8ky427pn7rb8h0000gp/T/tmpplLS4J/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1532 Aug 20 11:49 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Aug 20 11:49 aff_a
+drwxr-xr-x  3 deepthought  deepthought   102 Aug 20 11:49 first_word
+drwxr-xr-x  3 deepthought  deepthought   102 Aug 20 11:49 ft_itoa
+drwxr-xr-x  4 deepthought  deepthought   136 Aug 20 11:49 ft_list_size
+drwxr-xr-x  3 deepthought  deepthought   102 Aug 20 11:49 inter
+drwxr-xr-x  3 deepthought  deepthought   102 Aug 20 11:49 print_memory
+
+/var/folders/d0/gr9wl6ps3bb8ky427pn7rb8h0000gp/T/tmpplLS4J/user/aff_a:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1174 Aug 20 11:49 aff_a.c
+
+/var/folders/d0/gr9wl6ps3bb8ky427pn7rb8h0000gp/T/tmpplLS4J/user/first_word:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1143 Aug 20 11:49 first_word.c
+
+/var/folders/d0/gr9wl6ps3bb8ky427pn7rb8h0000gp/T/tmpplLS4J/user/ft_itoa:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1557 Aug 20 11:49 ft_itoa.c
+
+/var/folders/d0/gr9wl6ps3bb8ky427pn7rb8h0000gp/T/tmpplLS4J/user/ft_list_size:
+total 16
+-rw-r--r--  1 deepthought  deepthought  1042 Aug 20 11:49 ft_list.h
+-rw-r--r--  1 deepthought  deepthought  1094 Aug 20 11:49 ft_list_size.c
+
+/var/folders/d0/gr9wl6ps3bb8ky427pn7rb8h0000gp/T/tmpplLS4J/user/inter:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1404 Aug 20 11:49 inter.c
+
+/var/folders/d0/gr9wl6ps3bb8ky427pn7rb8h0000gp/T/tmpplLS4J/user/print_memory:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1627 Aug 20 11:49 print_memory.c
+ 
+= print_memory =================================================================
+$> gcc -Wextra -Wall -Werror print_memory.c main.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./g84l5v4gbje6asuv0ugldadt
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

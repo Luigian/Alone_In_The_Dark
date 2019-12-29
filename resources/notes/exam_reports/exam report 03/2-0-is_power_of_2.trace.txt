@@ -1,0 +1,69 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z2r8p9.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue May 21 09:39:22 PDT 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-beginner/exam_20190521/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/jd/cdng06m94xvc8n_qny34x4w80000gp/T/tmpQB_FJ8/user log --pretty='%H - %an, %ad : %s'
+dda34d865b913781f5e7bbf130477d318cb89dc9 - Exam 42, Tue May 21 09:39:04 2019 -0700 : is_power_of_2
+efbfdb03ba29ecd0a33730da907e5a579609e235 - Exam 42, Tue May 21 09:18:09 2019 -0700 : ft_strcpy
+7426ee94bc90ec3ed16d7301b1e9749e18e0b9da - Exam 42, Tue May 21 09:05:34 2019 -0700 : z
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/jd/cdng06m94xvc8n_qny34x4w80000gp/T/tmpQB_FJ8/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  681 May 21 09:39 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 May 21 09:39 ft_strcpy
+drwxr-xr-x  3 deepthought  deepthought  102 May 21 09:39 is_power_of_2
+drwxr-xr-x  3 deepthought  deepthought  102 May 21 09:39 only_z
+
+/var/folders/jd/cdng06m94xvc8n_qny34x4w80000gp/T/tmpQB_FJ8/user/ft_strcpy:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1024 May 21 09:39 ft_strcpy.c
+
+/var/folders/jd/cdng06m94xvc8n_qny34x4w80000gp/T/tmpQB_FJ8/user/is_power_of_2:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1051 May 21 09:39 is_power_of_2.c
+
+/var/folders/jd/cdng06m94xvc8n_qny34x4w80000gp/T/tmpQB_FJ8/user/only_z:
+total 8
+-rw-r--r--  1 deepthought  deepthought  965 May 21 09:39 only_z.c
+ 
+= is_power_of_2 ================================================================
+$> gcc -Wextra -Wall -Werror is_power_of_2.c main.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./s8b47791m3s4b2x4vw8goftr 0
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./b3ocx3g4egi30xx64kgkkmxl 1
+$> diff -U 3 user_output_test2 test2.output | cat -e
+--- user_output_test2	2019-05-21 09:39:23.000000000 -0700$
++++ test2.output	2019-05-21 09:39:23.000000000 -0700$
+@@ -1 +1 @@$
+-1 is not a power of 2!$
++1 is a power of 2!$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================

@@ -1,0 +1,51 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z2r2p15.42.us.org
+Darwin 17.2.0 x86_64
+$> date
+Tue Nov 19 11:33:39 PST 2019
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 10.0.0 (clang-1000.10.44.2)
+Target: x86_64-apple-darwin17.2.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 10.0.0 (clang-1000.10.44.2)
+Target: x86_64-apple-darwin17.2.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2019/c-exam-alone-in-the-dark-intermediate/exam_20191119/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/0w/sh_hxw5j2vn87cy1j1g7vbpc0000gp/T/tmpz8vyca/user log --pretty='%H - %an, %ad : %s'
+6b0184aef28f02f53110b0909b12427947c08e95 - Exam 42, Tue Nov 19 11:33:29 2019 -0800 : queue
+618cee9dec25292e09806217f378629ed6b9eaf9 - Exam 42, Tue Nov 19 10:04:12 2019 -0800 : is_anagram
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/0w/sh_hxw5j2vn87cy1j1g7vbpc0000gp/T/tmpz8vyca/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  498 Nov 19 11:33 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Nov 19 11:33 is_anagram
+drwxr-xr-x  3 deepthought  deepthought  102 Nov 19 11:33 queue
+
+/var/folders/0w/sh_hxw5j2vn87cy1j1g7vbpc0000gp/T/tmpz8vyca/user/is_anagram:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1165 Nov 19 11:33 is_anagram.c
+
+/var/folders/0w/sh_hxw5j2vn87cy1j1g7vbpc0000gp/T/tmpz8vyca/user/queue:
+total 8
+-rw-r--r--  1 deepthought  deepthought  2662 Nov 19 11:33 queue.c
+ 
+= queue ========================================================================
+$> gcc -Wextra -Wall -Werror main.c queue.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./mryx4bjtil9yrd5gmfwtdpde NULL
+Command './mryx4bjtil9yrd5gmfwtdpde NULL' got killed by a Segmentation fault (Signal -11)
+Grade: 0
+
+= Final grade: 0 ===============================================================
