@@ -1,0 +1,73 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z2r9p35.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Jan 14 11:41:14 PST 2020
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2020/c-exam-alone-in-the-dark-intermediate/exam_20200114/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/zy/_3_lm12n7sg6gpt0b83xbwzr0000gp/T/tmp6k4FCt/user log --pretty='%H - %an, %ad : %s'
+2a94fb35bd3714e093311ece91dc5fac83b54c47 - Exam 42, Tue Jan 14 11:40:04 2020 -0800 : stack
+da270e5646db128466cd67c559900a9a79608bd7 - Exam 42, Tue Jan 14 10:30:04 2020 -0800 : equation
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/zy/_3_lm12n7sg6gpt0b83xbwzr0000gp/T/tmp6k4FCt/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  507 Jan 14 11:41 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Jan 14 11:41 equation
+drwxr-xr-x  3 deepthought  deepthought  102 Jan 14 11:41 stack
+
+/var/folders/zy/_3_lm12n7sg6gpt0b83xbwzr0000gp/T/tmp6k4FCt/user/equation:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1528 Jan 14 11:41 equation.c
+
+/var/folders/zy/_3_lm12n7sg6gpt0b83xbwzr0000gp/T/tmp6k4FCt/user/stack:
+total 8
+-rw-r--r--  1 deepthought  deepthought  2216 Jan 14 11:41 stack.c
+ 
+= stack ========================================================================
+$> gcc -Wextra -Wall -Werror main.c stack.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./j2370603aie07ip3nnf5wj0w NULL
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./j3mtv7hmky8hy0hzng37b86p 1 2 3 4 5
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./exs0w1nwtle4abt9tkkhwqqm We wants it, we needs it. Must have the precious. They stole it from us. Sneaky little hobbitses. Wicked, tricksy, false!
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./f10c412qaxpncnxd85tcwawq 42
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./k12un48xrwbnse2cmv7xwyxu I have a bad feeling about this
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

@@ -16,3 +16,6 @@ rpn_cal - must not / or % by 0, and must deal with negatives operands
 
 --------------------------------------------------------------------------------------
 ALWAYS CHECK THAT EVERYTHING YOU ARE SENDING (FUNCTIONS, DATA TYPES) IS VINCULATED AND SUPPORTED. 
+
+
+To backup the advances of a working exercise (not yet completed) when the exam time is out, just need to push it, not need to "grademe" it.
