@@ -19,3 +19,7 @@ ALWAYS CHECK THAT EVERYTHING YOU ARE SENDING (FUNCTIONS, DATA TYPES) IS VINCULAT
 
 
 To backup the advances of a working exercise (not yet completed) when the exam time is out, just need to push it, not need to "grademe" it.
+
+can_split
+- sacar el total de nodos mediante una funcion recursiva que vaya, de regreso, reemplazando el value de cada nodo por el numero de hijos que tiene.
+- funcion recursiva que busque si algun value (numero de hijos) es igual a ((total / 2) - 1), si lo encuentra retornar 1.
