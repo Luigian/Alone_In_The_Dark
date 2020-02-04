@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/24 09:13:22 by exam              #+#    #+#             */
-/*   Updated: 2019/12/24 11:08:58 by exam             ###   ########.fr       */
+/*   Created: 2020/02/04 09:22:25 by exam              #+#    #+#             */
+/*   Updated: 2020/02/04 10:45:51 by exam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 /*
 #include <stdio.h>
+#include <stdlib.h>
 */
 
 struct s_node
@@ -20,115 +20,86 @@ struct s_node
 	int				value;
 	struct s_node	**nodes;
 };
-/*
-void	print_tree(struct s_node *root)
-{
-	int		i = 0;
 
-	printf("%d", root->value);
-	while (root->nodes[i])
-	{
-		print_tree(root->nodes[i]);
-		++i;
-	}
-}
-*/
-void	count_tree(struct s_node *root, int *c, int *r)
+void	ht_recursion(struct s_node *n, int *max, int level)
 {
 	int		i;
-	
+	int		x;
+
 	i = 0;
-	while (root->nodes[i])
+	x = 1;
+	while (n->nodes && n->nodes[i])
 	{
-		++*c;
-		count_tree(root->nodes[i], c, r);
+		if (x)
+		{
+			++level;
+			x = 0;
+		}
+		if (level > *max)
+			*max = level;
+		ht_recursion(n->nodes[i], max, level);
 		++i;
 	}
-//	printf("%d\n", *c);
-	if (*c > *r)
-		*r = *c;
-	*c -= 1;
 }
 
 int		height_tree(struct s_node *root)
 {
-	int		c[1] = {0};
-	int		r[1] = {0};
-	
+	int		level;
+	int		max;
+
 	if (!root)
 		return (-1);
-	count_tree(root, c, r);
-	return (*r);
-}
-/*
-struct s_node 	*init_node(void)
-{
-	struct s_node	*n;
-	
-	n = (struct s_node*)malloc(sizeof(struct s_node) * 1);
-	n->nodes = (struct s_node **)malloc(sizeof(struct s_node *) * 1);
-	n->nodes[0] = (struct s_node *)malloc(sizeof(struct s_node) * 1);
-	n->nodes[1] = (struct s_node *)malloc(sizeof(struct s_node) * 1);
-	return (n);
+	level = 0;
+	max = 0;
+	ht_recursion(root, &max, level);
+	return (max);
 }
 
+/*
 int		main(void)
 {
-	struct s_node	*root;
-	struct s_node	*n1;
-	struct s_node	*n2;
-	struct s_node	*n3;
-	struct s_node	*n4;
-	struct s_node	*n5;
-	struct s_node	*n6;
-	struct s_node	*single;
 	struct s_node	*empty;
+	struct s_node	alone;
+	struct s_node	head;
+	struct s_node	a;
+	struct s_node	b;
+	struct s_node	c;
+	struct s_node	d;
+	struct s_node	e;
+	struct s_node	f;
 
-	root = init_node();
-	n1 = init_node();
-	n2 = init_node();
-	n3 = init_node();
-	n4 = init_node();
-	n5 = init_node();
-	n6 = init_node();
-	single = init_node();
 	empty = NULL;
+	head.value = 94;
+	a.value = 34;
+	b.value = 52;
+	c.value = 1;
+	d.value = 99;
+	e.value = 11;
+	f.value = 13;
 	
-	root->value = 94;
-	root->nodes[0] = n1;
-	root->nodes[1] = n2;
-	root->nodes[2] = NULL;
+	head.nodes = (struct s_node **)malloc(sizeof(struct s_node *) * 2);
+	a.nodes = (struct s_node **)malloc(sizeof(struct s_node *) * 2);
+	b.nodes = (struct s_node **)malloc(sizeof(struct s_node *));
+	e.nodes = (struct s_node **)malloc(sizeof(struct s_node *));
+	
+	alone.nodes = NULL;
+	head.nodes[0] = &a;
+	head.nodes[1] = &b;
+	head.nodes[2] = NULL;
+	a.nodes[0] = &c;
+	a.nodes[1] = &d;
+	a.nodes[2] = NULL;
+	b.nodes[0] = &e;
+	b.nodes[1] = NULL;
+	c.nodes = NULL;
+	d.nodes = NULL;
+	e.nodes[0] = &f;
+	e.nodes[1] = NULL;
+	f.nodes = NULL;
 
-	n1->value = 34;
-	n1->nodes[0] = n3;
-	n1->nodes[1] = n4;
-	n1->nodes[2] = NULL;
-	
-	n3->value = 1;
-	n3->nodes[0] = NULL;
-	
-	n4->value = 99;
-	n4->nodes[0] = NULL;
-	
-	n2->value = 52;
-	n2->nodes[0] = n5;
-	n2->nodes[1] = NULL;
-	
-	n5->value = 11;
-	n5->nodes[0] = n6;
-	n5->nodes[1] = NULL;
-	
-	n6->value = 13;
-	n6->nodes[0] = NULL;
-	
-	single->value = 7;
-	single->nodes[0] = NULL;
-
-	print_tree(root);
-	printf("\n");
-	
-	printf("%d\n", height_tree(single));
+	printf("%d\n", height_tree(&head));
+	printf("%d\n", height_tree(&alone));
 	printf("%d\n", height_tree(empty));
-	printf("%d\n", height_tree(root));
 	return (0);
-}*/
+}
+*/

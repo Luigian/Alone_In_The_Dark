@@ -1,0 +1,69 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z2r6p11.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Feb  4 11:35:45 PST 2020
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2020/c-exam-alone-in-the-dark-intermediate/exam_20200204/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/j3/37jnr2y10g51ggr0n26mzqt80000gp/T/tmp1xacTR/user log --pretty='%H - %an, %ad : %s'
+ae09749d3807d00934138595ed6fd478d09107e6 - Exam 42, Tue Feb 4 11:35:14 2020 -0800 : longest_sequence
+25c95c8dbc20665b0fbf6cf99005e88c05a2d125 - Exam 42, Tue Feb 4 10:46:22 2020 -0800 : height_tree
+6a58c6ac9dfa01c67aa7e841b446853aa6f0323f - Exam 42, Tue Feb 4 09:20:50 2020 -0800 : find_pivot
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/j3/37jnr2y10g51ggr0n26mzqt80000gp/T/tmp1xacTR/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  776 Feb  4 11:35 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Feb  4 11:35 find_pivot
+drwxr-xr-x  3 deepthought  deepthought  102 Feb  4 11:35 height_tree
+drwxr-xr-x  3 deepthought  deepthought  102 Feb  4 11:35 longest_sequence
+
+/var/folders/j3/37jnr2y10g51ggr0n26mzqt80000gp/T/tmp1xacTR/user/find_pivot:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1552 Feb  4 11:35 find_pivot.c
+
+/var/folders/j3/37jnr2y10g51ggr0n26mzqt80000gp/T/tmp1xacTR/user/height_tree:
+total 8
+-rw-r--r--  1 deepthought  deepthought  2404 Feb  4 11:35 height_tree.c
+
+/var/folders/j3/37jnr2y10g51ggr0n26mzqt80000gp/T/tmp1xacTR/user/longest_sequence:
+total 8
+-rw-r--r--  1 deepthought  deepthought  2398 Feb  4 11:35 longest_sequence.c
+ 
+= longest_sequence =============================================================
+$> gcc -Wextra -Wall -Werror main.c longest_sequence.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./i2vwg3er7eqmuicl9bqkbqu0 657782 8
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./j03ttiqf06f28z50o5p1mzsx 1244557 13
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./trru6r7du7rfd38r6ptejkq3 100 3
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================

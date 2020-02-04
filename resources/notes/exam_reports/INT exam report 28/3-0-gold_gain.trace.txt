@@ -1,0 +1,85 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z2r7p7.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Feb  4 12:58:24 PST 2020
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2020/c-exam-alone-in-the-dark-intermediate/exam_20200204/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/gn/xm3m9sw51c1cx3vfhqz9l2sr0000gp/T/tmpmXJEq8/user log --pretty='%H - %an, %ad : %s'
+a25104287626650eada8f46a408b656529276d3d - Exam 42, Tue Feb 4 12:57:59 2020 -0800 : gold_gain
+ae09749d3807d00934138595ed6fd478d09107e6 - Exam 42, Tue Feb 4 11:35:14 2020 -0800 : longest_sequence
+25c95c8dbc20665b0fbf6cf99005e88c05a2d125 - Exam 42, Tue Feb 4 10:46:22 2020 -0800 : height_tree
+6a58c6ac9dfa01c67aa7e841b446853aa6f0323f - Exam 42, Tue Feb 4 09:20:50 2020 -0800 : find_pivot
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/gn/xm3m9sw51c1cx3vfhqz9l2sr0000gp/T/tmpmXJEq8/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  1031 Feb  4 12:58 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought   102 Feb  4 12:58 find_pivot
+drwxr-xr-x  3 deepthought  deepthought   102 Feb  4 12:58 gold_gain
+drwxr-xr-x  3 deepthought  deepthought   102 Feb  4 12:58 height_tree
+drwxr-xr-x  3 deepthought  deepthought   102 Feb  4 12:58 longest_sequence
+
+/var/folders/gn/xm3m9sw51c1cx3vfhqz9l2sr0000gp/T/tmpmXJEq8/user/find_pivot:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1552 Feb  4 12:58 find_pivot.c
+
+/var/folders/gn/xm3m9sw51c1cx3vfhqz9l2sr0000gp/T/tmpmXJEq8/user/gold_gain:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1691 Feb  4 12:58 gold_gain.c
+
+/var/folders/gn/xm3m9sw51c1cx3vfhqz9l2sr0000gp/T/tmpmXJEq8/user/height_tree:
+total 8
+-rw-r--r--  1 deepthought  deepthought  2404 Feb  4 12:58 height_tree.c
+
+/var/folders/gn/xm3m9sw51c1cx3vfhqz9l2sr0000gp/T/tmpmXJEq8/user/longest_sequence:
+total 8
+-rw-r--r--  1 deepthought  deepthought  2398 Feb  4 12:58 longest_sequence.c
+ 
+= gold_gain ====================================================================
+$> gcc -Wextra -Wall -Werror gold_gain.c main.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./wfpctkt86t14g677sotb4024 test_00.txt
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./tu4z6urfeih5nuljs283fxeh test_01.txt
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./pgkldaxffm0syeswj8gmn1x6 test_02.txt
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./9vblsrgehv8603nmlrrbejlj test_03.txt
+$> diff -U 3 user_output_test4 test4.output | cat -e
+--- user_output_test4	2020-02-04 12:58:26.000000000 -0800$
++++ test4.output	2020-02-04 12:58:26.000000000 -0800$
+@@ -1 +1 @@$
+-1046$
++1246$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================
