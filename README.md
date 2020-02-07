@@ -40,3 +40,8 @@ This is a collection of the exercises that I have faced so far in the "C Exam Al
 `./a.out` | For exercises that doesn't expects command-line arguments.
 
 `./a.out [argument string 1] [argument string 2] [argument string 3]` | For exercises that expects command-line arguments.
+
+## Credits:
+
+[*Luis Sanchez*](https://www.linkedin.com/in/luis-sanchez-13bb3b189/)
+2019. Freemont, CA
