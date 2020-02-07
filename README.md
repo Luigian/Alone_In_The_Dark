@@ -41,7 +41,7 @@ This is a collection of the exercises that I have faced so far in the "C Exam Al
 
 `./a.out [argument string 1] [argument string 2] [argument string 3]` | For exercises that expects command-line arguments.
 
-## Credits:
+### Credits:
 
 [*Luis Sanchez*](https://www.linkedin.com/in/luis-sanchez-13bb3b189/)
 2019. Freemont, CA
