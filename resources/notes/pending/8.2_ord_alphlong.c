@@ -5,120 +5,85 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/24 11:11:01 by exam              #+#    #+#             */
-/*   Updated: 2019/12/24 15:08:37 by lusanche         ###   ########.fr       */
+/*   Created: 2020/02/18 11:41:51 by exam              #+#    #+#             */
+/*   Updated: 2020/02/18 12:55:15 by exam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+/*
+Need to:
+- write ft_split
+- write ft_size
+- sort_list function for len and alphabetical
+*/
+
+#include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 
-void	print_words(char **split)
+typedef	struct		s_node
 {
-	int		i;
-	int		j;
+	char 			*str;
+	int				len;
+	struct s_node	*next;
+}					t_node;
+
+void	sort_list(t_node *beg)
+{
+	(void)beg;
+}
+
+
+void	ord_alphlong(char *s)
+{
+	int			i;
+	int			size;
+	t_node		*beg;
+	t_node		*trav;
+	
+//	words = ft_split(s);
+	(void)s;
+	char	*words[7] = {"After", "all", "this", "time", "Always", "said", "Snape"};
+	
+//	size = ft_size(words);
+	size = 7;
 
 	i = 0;
-	while (split[i])
+	beg = malloc(sizeof(t_node));
+	trav = beg;
+	while (i < size)
 	{
-		j = 0;
-		while (split[i][j])
+		trav->str = words[i];
+		trav->len = strlen(words[i]);
+		if ((i + 1) < size)
 		{
-			write(1, &(split[i][j]), 1);
-			++j;
+			trav->next = malloc(sizeof(t_node));
+			trav = trav->next;
 		}
-		++i;
-		if (split[i])
-			write(1, " ", 1);
 		else
-			write(1, "\n", 1);
-	}
-}
-
-int		count_words(char *s)
-{
-	int		ret;
-	int		in;
-
-	ret = 0;
-	while (*s)
-	{
-		in	= 0;
-		if (*s == ' ' || *s == '\t')
-			++s;
-		while (*s && *s != ' ' && *s != '\t')
-		{
-			if (!in)
-			{
-				++ret;
-				in = 1;
-			}
-			++s;
-		}
-	}
-	return (ret);
-}
-
-int		word_len(char *s)
-{
-	int		ret;
-
-	ret = 0;
-	while (*s == ' ' || *s == '\t')
-		++s;
-	while (*s && *s != ' ' && *s != '\t')
-	{
-		++ret;
-		++s;
-	}
-	return (ret);
-}
-
-char	**ft_split(char *s)
-{
-	char	**ret;
-	int		words;
-	int		len;
-	int		i;
-	int		j;
-
-	words = count_words(s);
-	ret = (char **)malloc(sizeof(char *) * words + 1);
-	i = 0;
-	while (words--)
-	{
-		len = word_len(s);
-		ret[i] = (char *)malloc(sizeof(char) * len + 1);
-		while (*s == ' ' || *s == '\t')
-			++s;
-		j = 0;
-		while (len--)
-		{
-			ret[i][j] = *s;
-			++j;
-			++s;
-		}
-		ret[i][j] = '\0';
+			trav->next = NULL;
 		++i;
 	}
-	ret[i] = NULL;
-	return (ret);
-}
-
-int		ord(char *s)
-{
-	char	 **split;
-
-	split = ft_split(s);
-	print_words(split);
-	return (0);
+	trav = beg;
+	while (trav)
+	{
+		printf("%s %d\n", trav->str, trav->len);
+		trav = trav->next;
+	}
+	sort_list(beg);
+	trav = beg;
+	while (trav)
+	{
+		printf("%s %d\n", trav->str, trav->len);
+		trav = trav->next;
+	}
 }
 
 int		main(int ac, char **av)
 {
 	if (ac == 2)
-		ord(av[1]);
+		ord_alphlong(av[1]);
 	else
 		write(1, "\n", 1);
 	return (0);
