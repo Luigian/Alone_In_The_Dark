@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/04 10:49:58 by exam              #+#    #+#             */
-/*   Updated: 2020/02/04 11:34:08 by exam             ###   ########.fr       */
+/*   Created: 2020/03/03 10:02:07 by exam              #+#    #+#             */
+/*   Updated: 2020/03/03 10:54:09 by exam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,80 +17,77 @@
 
 struct s_node
 {
-	int				value;
-	struct s_node	*left;
-	struct s_node	*right;
+	int value;
+	struct s_node *left;
+	struct s_node *right;
 };
 
-void	ls_recursion(struct s_node *n, int *max, int level)
+void	ls_recursion(struct s_node *node, int len, int *max)
 {
-	int		level_l;
-	int		level_r;
-
-	level_l = level;
-	level_r = level;
-	if (n->left)
+	if (len > *max)
+		*max = len;
+	if (node->left)
 	{
-		if (n->left->value - 1 == n->value)
-			++level_l;
+		if ((node->value + 1) == node->left->value)
+			ls_recursion(node->left, len + 1, max);
 		else
-			level_l = 1;	
-		if (level_l > *max)
-			*max = level_l;
-		ls_recursion(n->left, max, level_l);
+			ls_recursion(node->left, 1, max);
 	}
-	if (n->right)
+	if (node->right)
 	{
-		if (n->right->value - 1 == n->value)
-			++level_r;
+		if ((node->value + 1) == node->right->value)
+			ls_recursion(node->right, len + 1, max);
 		else
-			level_r = 1;	
-		if (level_r > *max)
-			*max = level_r;
-		ls_recursion(n->right, max, level_r);
+			ls_recursion(node->right, 1, max);
 	}
 }
 
 int		longest_sequence(struct s_node *node)
 {
-	int		level;
+	int		len;
 	int		max;
 
+	len = 1;
+	max = len;
 	if (!node)
 		return (0);
-	level = 1;
-	max = 1;
-	ls_recursion(node, &max, level);
+	ls_recursion(node, len, &max);
 	return (max);
 }
 
 /*
+void	print_tree(struct s_node *node)
+{
+	printf("%d\n", node->value);
+	if (node->left)
+		print_tree(node->left);
+	if (node->right)
+		print_tree(node->right);
+}
+
 int		main(void)
 {
 	struct s_node	*empty;
 	struct s_node	alone;
-	struct s_node	head;
-	struct s_node	a;
-	struct s_node	b;
-	struct s_node	c;
-	struct s_node	d;
-	struct s_node	e;
-	struct s_node	f;
-
 	empty = NULL;
-	head.value = 5;
-	a.value = 0;
-	b.value = 0;
-	c.value = 1;
-	d.value = 7;
-	e.value = 8;
-	f.value = 2;
-	
 	alone.left = NULL;
 	alone.right = NULL;
-	head.left = &a;
-	head.right = &b;
-	a.left = NULL;
+
+	struct s_node a;
+	struct s_node b;
+	struct s_node c;
+	struct s_node d;
+	struct s_node e;
+	struct s_node f;
+
+	a.value = 0;
+	b.value = 11;
+	c.value = 0;
+	d.value = 12;
+	e.value = 7;
+	f.value = 13;
+
+	a.left = &b;
 	a.right = NULL;
 	b.left = &c;
 	b.right = &d;
@@ -102,8 +99,9 @@ int		main(void)
 	e.right = NULL;
 	f.left = NULL;
 	f.right = NULL;
-
-	printf("%d\n", longest_sequence(&head));
+	
+//	print_tree(&a);
+	printf("%d\n", longest_sequence(&a));
 	printf("%d\n", longest_sequence(&alone));
 	printf("%d\n", longest_sequence(empty));
 	return (0);

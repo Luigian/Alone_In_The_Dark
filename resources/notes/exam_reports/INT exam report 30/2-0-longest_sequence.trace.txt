@@ -1,0 +1,69 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z2r9p2.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Mar  3 10:55:24 PST 2020
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2020/c-exam-alone-in-the-dark-intermediate/exam_20200303/lusanche
+
+= Git history ==================================================================
+$> git -C /var/folders/gn/0y1rd_s91lq0nqffblg547340000gp/T/tmpjSKYQY/user log --pretty='%H - %an, %ad : %s'
+fd24895d5178ae232cb82659a032a6a2d2d50616 - Exam 42, Tue Mar 3 10:54:59 2020 -0800 : longest_sequence
+6ce00c67505e3a741c3cf2e06326820c3e476670 - Exam 42, Tue Mar 3 10:00:48 2020 -0800 : queue
+490562f619aba6f3be1634c5c6adec00e6d5606d - Exam 42, Tue Mar 3 09:20:56 2020 -0800 : find_pivot
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/gn/0y1rd_s91lq0nqffblg547340000gp/T/tmpjSKYQY/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  770 Mar  3 10:55 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Mar  3 10:55 find_pivot
+drwxr-xr-x  3 deepthought  deepthought  102 Mar  3 10:55 longest_sequence
+drwxr-xr-x  3 deepthought  deepthought  102 Mar  3 10:55 queue
+
+/var/folders/gn/0y1rd_s91lq0nqffblg547340000gp/T/tmpjSKYQY/user/find_pivot:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1540 Mar  3 10:55 find_pivot.c
+
+/var/folders/gn/0y1rd_s91lq0nqffblg547340000gp/T/tmpjSKYQY/user/longest_sequence:
+total 8
+-rw-r--r--  1 deepthought  deepthought  2224 Mar  3 10:55 longest_sequence.c
+
+/var/folders/gn/0y1rd_s91lq0nqffblg547340000gp/T/tmpjSKYQY/user/queue:
+total 8
+-rw-r--r--  1 deepthought  deepthought  2462 Mar  3 10:55 queue.c
+ 
+= longest_sequence =============================================================
+$> gcc -Wextra -Wall -Werror main.c longest_sequence.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./vm4hf07n47mdrthc1hiz3khn 657782 8
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./ri6dw0ybiod6sbjsp0g0irj6 1244557 13
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./dvbpq4sia82qwxkp5qchh33q 100 3
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================
