@@ -64,46 +64,52 @@ void	print_tree(struct s_node *node)
 	if (node->right)
 		print_tree(node->right);
 }
-
+*/
+/*
 int		main(void)
 {
-	struct s_node	*empty;
-	struct s_node	alone;
-	empty = NULL;
-	alone.left = NULL;
-	alone.right = NULL;
+	struct s_node	*x;
+	x = NULL;
+		
+	struct s_node	a;
+	struct s_node	b;
+	struct s_node	c;
+	struct s_node	d;
+	struct s_node	e;
+	struct s_node	f;
+	struct s_node	g;
+	struct s_node	h;
 
-	struct s_node a;
-	struct s_node b;
-	struct s_node c;
-	struct s_node d;
-	struct s_node e;
-	struct s_node f;
-
-	a.value = 0;
-	b.value = 11;
-	c.value = 0;
-	d.value = 12;
-	e.value = 7;
-	f.value = 13;
+	a.value = 5;
+	b.value = 6;
+	c.value = 4;
+	d.value = 7;
+	e.value = 3;
+	f.value = 3;
+	g.value = 2;
+	h.value = 2;
 
 	a.left = &b;
-	a.right = NULL;
-	b.left = &c;
-	b.right = &d;
-	c.left = &e;
-	c.right = &f;
-	d.left = NULL;
-	d.right = NULL;
+	a.right = &c;
+	b.left = NULL;
+	b.right = NULL;
+	c.left = &d;
+	c.right = &e;
+	d.left = &f;
+	d.right = &g;
 	e.left = NULL;
-	e.right = NULL;
+	e.right = &h;
 	f.left = NULL;
 	f.right = NULL;
-	
+	g.left = NULL;
+	g.right = NULL;
+	h.left = NULL;
+	h.right = NULL;
+
 //	print_tree(&a);
 	printf("%d\n", longest_sequence(&a));
-	printf("%d\n", longest_sequence(&alone));
-	printf("%d\n", longest_sequence(empty));
+	printf("%d\n", longest_sequence(&c));
+	printf("%d\n", longest_sequence(x));
 	return (0);
 }
 */
