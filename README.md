@@ -8,7 +8,7 @@ This is a collection of the exercises that I have faced so far in the "C Exam Al
 ![](resources/images/calone_beg_record.png)
 
 ## My Intermediate exams record up to date:
-![](resources/images/calne_int_record.png)
+![](resources/images/calone_int_record.png)
 
 ## Key points:
 
