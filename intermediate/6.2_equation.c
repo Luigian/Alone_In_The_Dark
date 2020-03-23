@@ -1,44 +1,27 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   equation.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/18 09:02:46 by exam              #+#    #+#             */
-/*   Updated: 2020/02/18 09:19:22 by exam             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <stdio.h>
 
-void    equation(int n)
+void	equation(int n)
 {
-	int		a[10] = {0, 11, 22, 33, 44, 55, 66, 77, 88, 99};
-	int		cb[10];
-	int		i;
+	int	a[10] = {0, 11, 22, 33, 44, 55, 66, 77, 88, 99};
+	int	bc;
+	int	i;
 
 	i = 0;
 	while (i < 10)
 	{
-		cb[i] = n - a[i];
-		++i;
-	}
-	i = 0 ;
-	while (i < 10)
-	{
-		if (cb[i] >= 0 && cb[i] < 100)
-		{
-			printf("A = %d, B = %d, C = %d\n", i, cb[i] % 10, cb[i] > 9 ? cb[i] / 10 : 0);
-		}
-		++i;
+		bc = n - a[i];
+		if (bc >= 0 && bc < 100)
+			printf("A = %d, B = %d, C = %d\n", i, bc % 10, bc / 10);
+		i++;
 	}
 }
 
-/*
-int		main(void)
+int	main(void)
 {
+	equation(42);
+	printf("\n");
+	equation(111);
+	printf("\n");
 	equation(0);
 	return (0);
 }
-*/
