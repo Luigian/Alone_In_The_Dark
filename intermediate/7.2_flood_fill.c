@@ -1,52 +1,40 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   flood_fill.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/17 09:19:05 by exam              #+#    #+#             */
-/*   Updated: 2019/12/17 13:06:46 by lusanche         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-/*
 #include <stdio.h>
 #include <stdlib.h>
-*/
+
 typedef struct	s_point
 {
-	int			x;
-	int			y;
-}				t_point;
+	int	x;
+	int	y;
+}		t_point;
 
-void	flood_solve(char target, char **tab, t_point size, t_point current)
+void	ff_recursion(char **tab, t_point size, t_point current, char target)
 {
-	if (target == tab[current.y][current.x])
+	if (tab[current.y][current.x] == target)
 	{
 		tab[current.y][current.x] = 'F';
 		if (current.x + 1 < size.x)
 		{
-			current.x += 1;
-			flood_solve(target, tab, size, current);
-			current.x -= 1;
+			++current.x;
+			ff_recursion(tab, size, current, target);
+			--current.x;
 		}
 		if (current.x > 0)
 		{
-			current.x -= 1;
-			flood_solve(target, tab, size, current);
-			current.x += 1;
+			--current.x;
+			ff_recursion(tab, size, current, target);
+			++current.x;
 		}
 		if (current.y + 1 < size.y)
 		{
-			current.y += 1;
-			flood_solve(target, tab, size, current);
-			current.y -= 1;
+			++current.y;
+			ff_recursion(tab, size, current, target);
+			--current.y;
 		}
 		if (current.y > 0)
 		{
-			current.y -= 1;
-			flood_solve(target, tab, size, current);
-			current.y += 1;
+			--current.y;
+			ff_recursion(tab, size, current, target);
+			++current.y;
 		}
 	}
 }
@@ -58,11 +46,11 @@ void	flood_fill(char **tab, t_point size, t_point begin)
 	if (begin.x < size.x && begin.y < size.y)
 	{
 		target = tab[begin.y][begin.x];
-		flood_solve(target, tab, size, begin);
+		ff_recursion(tab, size, begin, target);
 	}
 }
-/*
-char** make_area(char** zone, t_point size)
+
+char	**make_area(char** zone, t_point size)
 {
 	char** new;
 
@@ -74,11 +62,10 @@ char** make_area(char** zone, t_point size)
 			new[i][j] = zone[i][j];
 		new[i][size.x] = '\0';
 	}
-
 	return new;
 }
 
-int main(void)
+int	main(void)
 {
 	t_point size = {8, 5};
 	char *zone[] = {
@@ -93,10 +80,9 @@ int main(void)
 	for (int i = 0; i < size.y; ++i)
 		printf("%s\n", area[i]);
 	printf("\n");
-
 	t_point begin = {7, 4};
 	flood_fill(area, size, begin);
 	for (int i = 0; i < size.y; ++i)
 		printf("%s\n", area[i]);
 	return (0);
-}*/
+}
