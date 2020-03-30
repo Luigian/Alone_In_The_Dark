@@ -28,7 +28,6 @@ void	enqueue(struct s_queue *queue, void *content)
 	n = malloc(sizeof(struct s_node));
 	n->content = content;
 	n->next = NULL;
-
 	if (queue->last)
 		queue->last->next = n;
 	else
