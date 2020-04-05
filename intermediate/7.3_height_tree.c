@@ -1,115 +1,92 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   height_tree.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/10 09:35:54 by exam              #+#    #+#             */
-/*   Updated: 2020/03/10 10:22:41 by exam             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/*
-#include <stdio.h>
 #include <stdlib.h>
-*/
+#include <stdio.h>
 
-struct s_node
-{
-	int				value;
+struct s_node {
+	int		value;
 	struct s_node	**nodes;
 };
 
+void	print_tree(struct s_node *root)
+{
+	int	i;
+
+	printf("%d\n", root->value);
+	i = 0;
+	while (root->nodes && root->nodes[i])
+	{
+		print_tree(root->nodes[i]);
+		++i;
+	}
+}
+
 void	ht_recursion(struct s_node *node, int len, int *max)
 {
-	int		i;
-	
-	if (len > *max)
-		*max = len;
+	int	i;
+
 	i = 0;
 	while (node->nodes && node->nodes[i])
 	{
 		ht_recursion(node->nodes[i], len + 1, max);
 		++i;
 	}
-}
+	if (len > *max)
+		*max = len;
+}	
 
-int		height_tree(struct s_node *root)
+int	height_tree(struct s_node *root)
 {
-	int		max[1] = {0};
-	int		i;
-	
+	int	len;
+	int	max;
+
+	len = 0;
+	max = 0;
 	if (!root)
 		return (-1);
-	i = 0;
-	while (root->nodes && root->nodes[i])
-	{
-		ht_recursion(root->nodes[i], 1, max);
-		++i;
-	}
-	return (*max);
+	ht_recursion(root, len, &max);
+	return (max);
 }
 
-/*
-void	print_tree(struct s_node *node)
+int	main(void)
 {
-	int		i;
+	struct s_node	n1;	
+	struct s_node	n2;	
+	struct s_node	n3;	
+	struct s_node	n4;	
+	struct s_node	n5;	
+	struct s_node	n6;	
+	struct s_node	n7;
+	struct s_node	*n8 = NULL;
 
-	printf("%d\n", node->value);
-	i = 0;
-	while (node->nodes && node->nodes[i])
-	{
-		print_tree(node->nodes[i]);
-		++i;
-	}
-}
-*/
-/*
-int		main(void)
-{
-	struct s_node	*empty;
-	empty = NULL;
+	n1.value = 94;
+	n2.value = 34;
+	n3.value = 52;
+	n4.value = 1;
+	n5.value = 99;
+	n6.value = 11;
+	n7.value = 13;
 	
-	struct s_node	a;	
-	struct s_node	b;	
-	struct s_node	c;	
-	struct s_node	d;	
-	struct s_node	e;	
-	struct s_node	f;	
-	struct s_node	g;
-	
-	a.value = 94;
-	b.value = 34;
-	c.value = 52;
-	d.value = 1;
-	e.value = 99;
-	f.value = 11;
-	g.value = 13;
-	
-	a.nodes = malloc(sizeof(struct s_node) * 2);
-	b.nodes = malloc(sizeof(struct s_node) * 2);
-	c.nodes = malloc(sizeof(struct s_node));
-	f.nodes = malloc(sizeof(struct s_node));
-	d.nodes = NULL;
-	e.nodes = NULL;
-	g.nodes = NULL;
+	n1.nodes = malloc(sizeof(struct s_node *) * 3);
+	n2.nodes = malloc(sizeof(struct s_node *) * 3);
+	n3.nodes = malloc(sizeof(struct s_node *) * 2);
+	n6.nodes = malloc(sizeof(struct s_node *) * 2);
 
-	a.nodes[0] = &b;
-	a.nodes[1] = &c;
-	a.nodes[2] = NULL;
-	b.nodes[0] = &d;
-	b.nodes[1] = &e;
-	b.nodes[2] = NULL;
-	c.nodes[0] = &f;
-	c.nodes[1] = NULL;
-	f.nodes[0] = &g;
-	f.nodes[1] = NULL;
+	n1.nodes[0] = &n2;
+	n1.nodes[1] = &n3;
+	n1.nodes[2] = NULL;
+	n2.nodes[0] = &n4;
+	n2.nodes[1] = &n5;
+	n2.nodes[2] = NULL;
+	n3.nodes[0] = &n6;
+	n3.nodes[1] = NULL;
+	n4.nodes = NULL;
+	n5.nodes = NULL;
+	n6.nodes[0] = &n7;
+	n6.nodes[1] = NULL;
+	n7.nodes = NULL;
 
-//	print_tree(&a);
-	printf("%d\n", height_tree(&a));
-	printf("%d\n", height_tree(empty));
-	printf("%d\n", height_tree(&g));
+//	print_tree(&n1);
+	printf("%d\n", height_tree(&n1));
+	printf("%d\n", height_tree(&n7));
+	printf("%d\n", height_tree(n8));
 	return (0);
 }
-*/
