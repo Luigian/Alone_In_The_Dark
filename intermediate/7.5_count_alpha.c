@@ -1,65 +1,51 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   count_alpha.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/23 10:30:38 by exam              #+#    #+#             */
-/*   Updated: 2020/01/23 11:14:49 by exam             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <stdio.h>
+#include<stdio.h>
 
 void	count_alpha(char *s)
 {
-	int		arr[128];
-	int		i;
-	int		p;
+	int	a[128];
+	int	i;
+	int	x;
 
 	i = 0;
 	while (i < 128)
-		arr[i++] = 0;
+		a[i++] = 0;
 	i = 0;
 	while (s[i])
 	{
 		if (s[i] >= 65 && s[i] <= 90)
-			arr[s[i] + 32] += 1; 
+			a[(int)s[i] + 32] += 1;
 		else if (s[i] >= 97 && s[i] <= 122)
-			arr[(int)s[i]] += 1;
+			a[(int)s[i]] += 1;
 		++i;
-	}	
+	}
 	i = 0;
-	p = 0;
+	x = 0;
 	while (s[i])
 	{
-		if (s[i] >= 65 && s[i] <= 90 && arr[s[i] + 32])
+		if (s[i] >= 65 && s[i] <= 90 && a[(int)s[i] + 32])
 		{
-			if (p)
+			if (x)
 				printf(", ");
-			printf("%d%c", arr[s[i] + 32], s[i] + 32);
-			p = 1;
-			arr[s[i] + 32] = 0;
-		}	
-		else if (s[i] >= 97 && s[i] <= 122 && arr[(int)s[i]])
+			printf("%d%c", a[(int)s[i] + 32], s[i] + 32);
+			a[(int)s[i] + 32] = 0;
+			x = 1;
+		}
+		else if (s[i] >= 97 && s[i] <= 122 && a[(int)s[i]])
 		{
-			if (p)
+			if (x)
 				printf(", ");
-			printf("%d%c", arr[(int)s[i]], s[i]);
-			p = 1;
-			arr[(int)s[i]] = 0;
+			printf("%d%c", a[(int)s[i]], s[i]);
+			a[(int)s[i]] = 0;
+			x = 1;
 		}
 		++i;
 	}
-	printf("\n");
 }
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	if (ac == 2)
 		count_alpha(av[1]);
-	else
-		printf("\n");
+	printf("\n");
 	return (0);
 }
