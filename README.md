@@ -1,13 +1,14 @@
 ![](resources/images/calone_banner.png)
 
-# C Exam Alone In The Dark - Beginner and Intermediate
+# Alone In The Dark
+## A collection of C Exam Exercises
 
-This is a collection of the exercises that I have faced so far in the "C Exam Alone In The Dark", "Beginner" and "Intermediate", of 42 School. These exams allowed me to check my achievements when i was alone in front of the computer, without peers and without internet. To validate "Beginners" (which is a prerequisite for "Intermediate" level), i must validate 5 exams with a minimum score of 75, which  means be able to succed on exercises of level 4. To validate "Intermediate" level, i must validate 5 exams with a minimum score of 85.
+These are the exercises that I have faced so far in the "C Exam Alone In The Dark", beginner and intermediate levels, of 42 School. These exams allow usme to check our achievements when we were alone in front of the computer, without peers and without internet. To validate "Beginners" level (which is a prerequisite for "Intermediate"), we must validate 5 exams with a minimum score of 75, which  means be able to succed on exercises of level 4. To validate "Intermediate" level, we must validate 5 exams with a minimum score of 85.
 
-## My Beginner exams record up to date:
+## Beginner record:
 ![](resources/images/calone_beg_record.png)
 
-## My Intermediate exams record up to date:
+## Intermediate record:
 ![](resources/images/calone_int_record.png)
 
 ## Key points:
